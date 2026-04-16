@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -19,13 +19,13 @@
                         heading: ['Montserrat', 'sans-serif'],
                     },
                     colors: {
-                        // Paleta extraída exactamente de tu logo
-                        brandSage: '#6A8D73',    /* Verde salvia del texto/hojas */
-                        brandSageLight: '#8BAF95',
-                        brandGold: '#C4A77D',    /* Dorado/Bronce del centro del loto */
-                        brandGoldLight: '#DDC5A1',
-                        darkText: '#1F2937',     /* Gris muy oscuro para el texto principal */
-                        lightBg: '#FAFAFA',      /* Fondo casi blanco para contraste suave */
+                        // Paleta extraída del nuevo logo
+                        brandBlue: '#1A4A76',      /* Azul acero profundo del perfil */
+                        brandBlueLight: '#2C6496', /* Azul más claro para hovers */
+                        brandGreen: '#3A7843',     /* Verde botánico de las hojas */
+                        brandGreenLight: '#4A9455',
+                        darkText: '#1F2937',       
+                        lightBg: '#F8FAFC',        /* Fondo casi blanco/azulado muy sutil */
                     }
                 }
             }
@@ -33,27 +33,42 @@
     </script>
     <style>
         .text-gradient {
-            background: linear-gradient(to right, #6A8D73, #C4A77D);
+            background: linear-gradient(to right, #1A4A76, #3A7843);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        .category-title {
+            position: relative;
+            display: inline-block;
+        }
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 3px;
+            background-color: #3A7843;
+            border-radius: 2px;
+        }
     </style>
 </head>
-<body class="bg-white text-gray-600 antialiased selection:bg-brandGold selection:text-white font-sans">
+<body class="bg-white text-gray-600 antialiased selection:bg-brandBlue selection:text-white font-sans">
 
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center h-20">
-            <a href="#" class="flex items-center space-x-3 h-full">
-                <img src="logo.jpg" alt="Estética y Bienestar Logo" class="h-14 w-auto object-contain" 
-                     onerror="this.onerror=null; this.src='https://placehold.co/400x120/ffffff/6A8D73?text=Est%C3%A9tica+y+Bienestar&font=Montserrat'">
+            <a href="#inicio" class="flex items-center h-full">
+                <img src="Logo.jpg" alt="Estética y Bienestar" class="h-16 w-auto object-contain">
             </a>
-            <div class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#inicio" class="text-gray-700 hover:text-brandSage transition-colors">Inicio</a>
-                <a href="#servicios" class="text-gray-700 hover:text-brandSage transition-colors">Tratamientos</a>
-                <a href="#nosotros" class="text-gray-700 hover:text-brandSage transition-colors">La Clínica</a>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold">
+                <a href="#diagnostico" class="text-brandBlue hover:text-brandGreen transition-colors">Diagnóstico</a>
+                <a href="#capilar" class="text-brandBlue hover:text-brandGreen transition-colors">Capilar</a>
+                <a href="#relajacion" class="text-brandBlue hover:text-brandGreen transition-colors">Relajación</a>
+                <a href="#postoperatorios" class="text-brandBlue hover:text-brandGreen transition-colors">Postoperatorios</a>
             </div>
             <div>
-                <a href="#reservas" class="bg-brandSage text-white hover:bg-brandSageLight px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg">
+                <a href="#reservas" class="bg-brandBlue text-white hover:bg-brandBlueLight px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-md hover:shadow-lg">
                     Agendar Cita
                 </a>
             </div>
@@ -61,221 +76,208 @@
     </nav>
 
     <header id="inicio" class="relative flex flex-col items-center justify-center min-h-screen text-center px-6 pt-24 pb-12 overflow-hidden bg-lightBg">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4?q=80&w=2070&auto=format&fit=crop" alt="Fondo Clínica" class="w-full h-full object-cover opacity-20">
-            <div class="absolute inset-0 bg-gradient-to-b from-white/80 via-white/95 to-white"></div>
+        <div class="absolute inset-0 z-0 opacity-10">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop" alt="Fondo Bienestar" class="w-full h-full object-cover mix-blend-luminosity">
+            <div class="absolute inset-0 bg-white/80"></div>
         </div>
         
         <div class="z-10 max-w-4xl mt-10 relative">
-            <span class="text-brandGold font-bold tracking-widest uppercase text-sm mb-4 block">Bienvenida a tu mejor versión</span>
-            <h1 class="font-heading text-5xl md:text-7xl font-bold tracking-tight mb-6 text-darkText leading-tight">
-                Ciencia, estética y <span class="text-gradient">bienestar integral.</span>
+            <span class="text-brandGreen font-bold tracking-widest uppercase text-sm mb-4 block">Renovación integral</span>
+            <h1 class="font-heading text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-brandBlue leading-tight">
+                Armonía entre tu <br><span class="text-gradient">cuerpo y mente.</span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-500 mb-10 font-light max-w-2xl mx-auto leading-relaxed">
-                Descubre tratamientos de vanguardia diseñados para realzar tu belleza natural. En un ambiente clínico, seguro y con la más alta tecnología.
+            <p class="text-lg md:text-xl text-gray-500 mb-10 font-medium max-w-2xl mx-auto leading-relaxed">
+                Especialistas en recuperación, bienestar y estética. Descubre tratamientos personalizados que te harán sentir y verte increíble.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#reservas" class="inline-block bg-brandGold text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-brandGoldLight transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
-                    Agendar Valoración
-                </a>
-                <a href="#servicios" class="inline-block bg-white border-2 border-gray-200 text-gray-700 hover:border-brandSage hover:text-brandSage px-10 py-4 rounded-full font-semibold text-lg transition duration-300 shadow-sm">
-                    Ver Tratamientos
+                <a href="#reservas" class="inline-block bg-brandGreen text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-brandGreenLight transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                    Agenda tu Valoración
                 </a>
             </div>
         </div>
     </header>
 
-    <section class="py-24 px-6 max-w-7xl mx-auto bg-white" id="servicios">
-        <div class="text-center mb-16">
-            <h2 class="font-heading text-brandSage font-bold tracking-widest uppercase text-sm mb-2">Nuestro Catálogo</h2>
-            <h3 class="font-heading text-4xl md:text-5xl font-bold text-darkText tracking-tight mb-4">Tratamientos Exclusivos</h3>
-            <div class="w-24 h-1 bg-brandGold mx-auto rounded-full mb-6"></div>
-            <p class="text-gray-500 max-w-2xl mx-auto text-lg">Soluciones dermatológicas y estéticas adaptadas a las necesidades únicas de tu piel.</p>
-        </div>
+    <main class="py-20 bg-white">
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section id="diagnostico" class="pt-10 pb-20 px-6 max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-brandBlue category-title pb-4">Diagnóstico y Personalización</h2>
+                <p class="mt-6 text-gray-500">El primer paso hacia tu transformación, basado en la ciencia de tu propio cuerpo.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop" alt="Escáner facial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-heading text-xl font-bold text-brandBlue mb-2">Escáner facial</h4>
+                        <p class="text-gray-500 text-sm mb-4">Análisis profundo de tu piel con tecnología avanzada para revelar sus necesidades reales ocultas bajo la superficie.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=800&auto=format&fit=crop" alt="Valoraciones corporales" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-heading text-xl font-bold text-brandBlue mb-2">Valoraciones corporales</h4>
+                        <p class="text-gray-500 text-sm mb-4">Estudio detallado de tu composición corporal para determinar las áreas clave a trabajar con precisión.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=800&auto=format&fit=crop" alt="Planes personalizados" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-heading text-xl font-bold text-brandBlue mb-2">Planes personalizados</h4>
+                        <p class="text-gray-500 text-sm mb-4">Diseñamos una ruta clínica exclusiva basada en tu valoración para garantizar resultados óptimos y medibles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="capilar" class="py-20 px-6 max-w-7xl mx-auto bg-lightBg rounded-3xl">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-brandBlue category-title pb-4">Tratamientos Capilares</h2>
+                <p class="mt-6 text-gray-500">Salud, fuerza y vitalidad desde la raíz hasta las puntas.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=800&auto=format&fit=crop" alt="Hidratación capilar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-heading text-xl font-bold text-brandBlue mb-2">Hidratación capilar</h4>
+                        <p class="text-gray-500 text-sm mb-4">Infusión profunda de aminoácidos y nutrientes que devuelve el brillo, la fuerza y la suavidad a la fibra capilar.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group relative">
+                    <div class="absolute top-4 right-4 bg-brandGreen text-white text-xs font-bold px-3 py-1 rounded-full z-10 uppercase tracking-widest shadow-md">Tendencia</div>
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop" alt="Spa capilar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-heading text-xl font-bold text-brandBlue mb-2">Spa capilar</h4>
+                        <p class="text-gray-500 text-sm mb-4">Una experiencia sensorial y relajante para purificar el cuero cabelludo, aliviar tensiones y estimular el crecimiento.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=800&auto=format&fit=crop" alt="Tratamientos para caída" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-heading text-xl font-bold text-brandBlue mb-2">Freno a la caída del cabello</h4>
+                        <p class="text-gray-500 text-sm mb-4">Fórmulas clínicas y mesoterapia especializada para fortalecer el folículo piloso, detener la pérdida y mejorar la densidad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="relajacion" class="py-20 px-6 max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-brandBlue category-title pb-4">Relajación y Bienestar</h2>
+                <p class="mt-6 text-gray-500">Desconecta del mundo y reconecta contigo misma en un espacio de paz.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=600&auto=format&fit=crop" alt="Piedras calientes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-heading text-lg font-bold text-brandBlue mb-2">Masaje con piedras calientes</h4>
+                        <p class="text-gray-500 text-sm">Calor terapéutico que penetra los músculos para liberar tensión acumulada.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=600&auto=format&fit=crop" alt="Masaje con velas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-heading text-lg font-bold text-brandBlue mb-2">Masaje con velas</h4>
+                        <p class="text-gray-500 text-sm">Aceites esenciales cálidos que hidratan la piel mientras relajan la mente.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=600&auto=format&fit=crop" alt="Aromaterapia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-heading text-lg font-bold text-brandBlue mb-2">Aromaterapia</h4>
+                        <p class="text-gray-500 text-sm">El poder botánico de las esencias puras para equilibrar tus emociones.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=600&auto=format&fit=crop" alt="Musicoterapia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-heading text-lg font-bold text-brandBlue mb-2">Musicoterapia</h4>
+                        <p class="text-gray-500 text-sm">Frecuencias sonoras que armonizan tu sistema nervioso para relajación profunda.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="postoperatorios" class="py-20 px-6 max-w-7xl mx-auto border-t border-gray-100">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-brandBlue category-title pb-4">Cuidado Postoperatorio</h2>
+                <p class="mt-6 text-gray-500">Recuperación experta, segura y acelerada tras tu intervención estética.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1611625618313-6af8cece5c20?q=80&w=800&auto=format&fit=crop" alt="Drenaje linfático" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-heading text-xl font-bold text-brandBlue mb-2">Drenaje linfático</h4>
+                        <p class="text-gray-500 text-sm">Terapia manual suave y precisa para eliminar líquidos retenidos, desinflamar el cuerpo y acelerar la sanación post-cirugía.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?q=80&w=800&auto=format&fit=crop" alt="Manejo de fibrosis" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-heading text-xl font-bold text-brandBlue mb-2">Manejo de fibrosis</h4>
+                        <p class="text-gray-500 text-sm">Prevención y tratamiento de cicatrizaciones internas anormales (endurecimientos) utilizando ultrasonido y técnicas especializadas.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544161513-0179fe746fd5?q=80&w=800&auto=format&fit=crop" alt="Masajes post lipo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-heading text-xl font-bold text-brandBlue mb-2">Masajes post Lipo / Abdominoplastia</h4>
+                        <p class="text-gray-500 text-sm">Cuidado integral que moldea la figura, evita irregularidades en la piel y optimiza los resultados estéticos de tu operación.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <section id="reservas" class="py-24 px-6 bg-brandBlue text-white text-center border-t-4 border-brandGreen">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h2 class="font-heading text-brandGreenLight font-bold tracking-widest uppercase text-sm mb-2">Tu Cita a un clic</h2>
+            <h3 class="font-heading text-4xl md:text-5xl font-bold tracking-tight mb-6">Agenda tu Tratamiento</h3>
+            <p class="text-blue-100 mb-12 text-lg max-w-xl mx-auto">Selecciona tu horario preferido y asegura tu espacio. Nuestro sistema de agendamiento opera 24/7 de forma automática.</p>
             
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100 group">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=800&auto=format&fit=crop" alt="Limpieza facial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <h4 class="font-heading text-xl font-bold text-darkText mb-2 group-hover:text-brandSage transition-colors">Limpieza facial profunda</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Purifica tus poros y elimina impurezas. Devuelve el oxígeno y la luminosidad natural a tu rostro de forma inmediata.</p>
-                    <a href="#reservas" class="text-brandGold font-semibold text-sm hover:text-brandSage transition-colors flex items-center">Agendar sesión <span class="ml-1">→</span></a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100 group">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop" alt="Rejuvenecimiento" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <h4 class="font-heading text-xl font-bold text-darkText mb-2 group-hover:text-brandSage transition-colors">Tratamientos rejuvenecedores</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Protocolos integrales diseñados para estimular la renovación celular, atenuando los signos de la edad con elegancia.</p>
-                    <a href="#reservas" class="text-brandGold font-semibold text-sm hover:text-brandSage transition-colors flex items-center">Agendar sesión <span class="ml-1">→</span></a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100 group">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1534655882119-29bfabf73111?q=80&w=800&auto=format&fit=crop" alt="Depilación láser" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <h4 class="font-heading text-xl font-bold text-darkText mb-2 group-hover:text-brandSage transition-colors">Depilación láser</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Tecnología lumínica avanzada para la eliminación del vello de forma segura, eficaz e indolora en cualquier zona.</p>
-                    <a href="#reservas" class="text-brandGold font-semibold text-sm hover:text-brandSage transition-colors flex items-center">Agendar sesión <span class="ml-1">→</span></a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100 group">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1615396823348-1ac83a005085?q=80&w=800&auto=format&fit=crop" alt="Antiedad" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <h4 class="font-heading text-xl font-bold text-darkText mb-2 group-hover:text-brandSage transition-colors">Antiedad y revitalización</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Sueros biológicos y aparatología que devuelven la hidratación profunda, elasticidad y firmeza a la piel madura.</p>
-                    <a href="#reservas" class="text-brandGold font-semibold text-sm hover:text-brandSage transition-colors flex items-center">Agendar sesión <span class="ml-1">→</span></a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100 group">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1628189675661-d7f6b9b3297a?q=80&w=800&auto=format&fit=crop" alt="Mascarillas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <h4 class="font-heading text-xl font-bold text-darkText mb-2 group-hover:text-brandSage transition-colors">Peelings y mascarillas</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Fórmulas magistrales para exfoliar suavemente, unificar el tono de la piel y aportar un brillo radiante al instante.</p>
-                    <a href="#reservas" class="text-brandGold font-semibold text-sm hover:text-brandSage transition-colors flex items-center">Agendar sesión <span class="ml-1">→</span></a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100 group">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop" alt="Radiofrecuencia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <h4 class="font-heading text-xl font-bold text-darkText mb-2 group-hover:text-brandSage transition-colors">Radiofrecuencia facial</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Ondas térmicas que penetran la dermis para estimular nuevo colágeno, logrando un efecto lifting tensor sin cirugías.</p>
-                    <a href="#reservas" class="text-brandGold font-semibold text-sm hover:text-brandSage transition-colors flex items-center">Agendar sesión <span class="ml-1">→</span></a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100 group">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1599581893952-4464c207fc15?q=80&w=800&auto=format&fit=crop" alt="Dermapen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <h4 class="font-heading text-xl font-bold text-darkText mb-2 group-hover:text-brandSage transition-colors">Dermapen (Microneedling)</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Inducción de colágeno mediante microagujas de alta velocidad. Ideal para tratar cicatrices de acné, poros y arrugas.</p>
-                    <a href="#reservas" class="text-brandGold font-semibold text-sm hover:text-brandSage transition-colors flex items-center">Agendar sesión <span class="ml-1">→</span></a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100 group">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=800&auto=format&fit=crop" alt="Peeling químico" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <h4 class="font-heading text-xl font-bold text-darkText mb-2 group-hover:text-brandSage transition-colors">Peeling químico profesional</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Renovación clínica controlada que elimina capas superficiales dañadas para tratar melasma, manchas solares y textura irregular.</p>
-                    <a href="#reservas" class="text-brandGold font-semibold text-sm hover:text-brandSage transition-colors flex items-center">Agendar sesión <span class="ml-1">→</span></a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100 group">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=800&auto=format&fit=crop" alt="Bioestimuladores" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <h4 class="font-heading text-xl font-bold text-darkText mb-2 group-hover:text-brandSage transition-colors">Bioestimuladores de colágeno</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Sustancias inyectables biocompatibles que redensifican la piel desde el interior, combatiendo la flacidez con resultados muy naturales.</p>
-                    <a href="#reservas" class="text-brandGold font-semibold text-sm hover:text-brandSage transition-colors flex items-center">Agendar sesión <span class="ml-1">→</span></a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100 group">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=800&auto=format&fit=crop" alt="Terapia LED" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <h4 class="font-heading text-xl font-bold text-darkText mb-2 group-hover:text-brandSage transition-colors">Terapia LED facial</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Fototerapia clínica que utiliza diferentes longitudes de onda para combatir bacterias, reducir rojeces y acelerar la sanación.</p>
-                    <a href="#reservas" class="text-brandGold font-semibold text-sm hover:text-brandSage transition-colors flex items-center">Agendar sesión <span class="ml-1">→</span></a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100 group relative">
-                <div class="absolute top-4 right-4 bg-darkText text-brandGold text-xs font-bold px-3 py-1 rounded-full z-10">PREMIUM</div>
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800&auto=format&fit=crop" alt="Hydrafacial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <h4 class="font-heading text-xl font-bold text-darkText mb-2 group-hover:text-brandSage transition-colors">Hydrafacial</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">El tratamiento líder global. Limpia, extrae comedones e hidrata con antioxidantes y péptidos en una sola sesión de lujo.</p>
-                    <a href="#reservas" class="text-brandGold font-semibold text-sm hover:text-brandSage transition-colors flex items-center">Agendar sesión <span class="ml-1">→</span></a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100 group">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=800&auto=format&fit=crop" alt="Mesoterapia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <h4 class="font-heading text-xl font-bold text-darkText mb-2 group-hover:text-brandSage transition-colors">Mesoterapia facial</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Microinyecciones de vitaminas, minerales y ácido hialurónico no reticulado para nutrir e iluminar la piel apagada desde adentro.</p>
-                    <a href="#reservas" class="text-brandGold font-semibold text-sm hover:text-brandSage transition-colors flex items-center">Agendar sesión <span class="ml-1">→</span></a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100 group">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop" alt="Ácido hialurónico" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <h4 class="font-heading text-xl font-bold text-darkText mb-2 group-hover:text-brandSage transition-colors">Ácido hialurónico</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Armonización facial. Relleno biocompatible para recuperar volúmenes perdidos, perfilar labios y rellenar surcos profundos.</p>
-                    <a href="#reservas" class="text-brandGold font-semibold text-sm hover:text-brandSage transition-colors flex items-center">Agendar sesión <span class="ml-1">→</span></a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100 group">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1508296695146-257a814050b4?q=80&w=800&auto=format&fit=crop" alt="Toxina botulínica" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <h4 class="font-heading text-xl font-bold text-darkText mb-2 group-hover:text-brandSage transition-colors">Toxina botulínica</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Relajación neuromuscular selectiva. Previene y elimina las arrugas de expresión (frente, entrecejo, patas de gallo) manteniendo tu naturalidad.</p>
-                    <a href="#reservas" class="text-brandGold font-semibold text-sm hover:text-brandSage transition-colors flex items-center">Agendar sesión <span class="ml-1">→</span></a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="reservas" class="py-24 px-6 bg-lightBg border-t border-gray-200">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="font-heading text-brandSage font-bold tracking-widest uppercase text-sm mb-2">Paso Final</h2>
-            <h3 class="font-heading text-4xl md:text-5xl font-bold text-darkText tracking-tight mb-6">Agenda tu Espacio</h3>
-            <p class="text-gray-500 mb-12 text-lg max-w-xl mx-auto">Selecciona tu horario preferido. Nuestro sistema de agendamiento 24/7 garantiza tu cita directamente en nuestra clínica.</p>
-            
-            <div class="calendly-inline-widget rounded-2xl overflow-hidden shadow-xl border border-gray-200 bg-white" 
+            <div class="calendly-inline-widget rounded-2xl overflow-hidden shadow-2xl bg-white border border-white/10" 
                  data-url="https://calendly.com/TU_USUARIO_DE_CALENDLY/TU_EVENTO" style="min-width:320px;height:700px;"></div>
             <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
             </div>
     </section>
 
-    <footer class="py-12 px-6 text-center border-t border-gray-200 bg-white">
-        <div class="font-heading font-bold text-xl tracking-wide text-darkText mb-4">Estética<span class="text-brandSage"> y Bienestar</span></div>
-        <p class="text-gray-500 text-sm font-medium">&copy; 2026 Estética y Bienestar. Diseñado para la excelencia.</p>
+    <footer class="py-12 px-6 text-center bg-white border-t border-gray-100">
+        <div class="font-heading font-extrabold text-xl tracking-wide text-brandBlue mb-4">ESTÉTICA<span class="text-brandGreen"> Y BIENESTAR</span></div>
+        <p class="text-gray-500 text-sm font-medium">&copy; 2026 Estética y Bienestar. Diseñado para la excelencia en Duitama.</p>
     </footer>
 
-    <a href="https://wa.me/573000000000?text=Hola,%20quiero%20agendar%20una%20cita%20o%20recibir%20más%20información." target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 bg-[#25D366] text-white p-4 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:scale-110 hover:bg-[#20bd5a] transition-all duration-300 z-50 flex items-center justify-center group">
+    <a href="https://wa.me/573000000000?text=Hola,%20quiero%20más%20información%20sobre%20los%20servicios%20y%20agendar%20una%20cita." target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 bg-[#25D366] text-white p-4 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:scale-110 hover:bg-[#20bd5a] transition-all duration-300 z-50 flex items-center justify-center group">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
         </svg>
-        <span class="absolute right-20 bg-white text-darkText font-bold text-sm px-5 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg border border-gray-100">
-            Atención vía WhatsApp
+        <span class="absolute right-20 bg-white text-brandBlue font-bold text-sm px-5 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg border border-gray-100">
+            Chatea con un experto
         </span>
     </a>
 
