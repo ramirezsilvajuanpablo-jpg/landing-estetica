@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica de Estética Avanzada</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #f3f4f6; }
+        .glass-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="relative flex flex-col items-center justify-center min-h-screen text-center px-6 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 z-0"></div>
+        <div class="z-10 max-w-3xl">
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-white">
+                Belleza en su <span class="text-gray-400">máxima expresión.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 mb-10 font-light">
+                Tecnología de vanguardia y tratamientos personalizados para transformar tu piel y resaltar tu bienestar.
+            </p>
+            <a href="#reservas" class="inline-block bg-white text-black px-10 py-4 rounded-full font-semibold text-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105">
+                Agendar Valoración
+            </a>
+        </div>
+    </header>
+
+    <section class="py-24 px-6 max-w-7xl mx-auto" id="servicios">
+        <h2 class="text-3xl md:text-4xl font-semibold mb-16 text-center text-white tracking-tight">Nuestros Tratamientos</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="glass-card p-8 rounded-2xl hover:bg-white/5 transition duration-300">
+                <h3 class="text-xl font-semibold text-white mb-3">Rejuvenecimiento Facial</h3>
+                <p class="text-gray-400 text-sm">Radiofrecuencia, Dermapen (Microneedling) y Toxina Botulínica para atenuar líneas de expresión.</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl hover:bg-white/5 transition duration-300">
+                <h3 class="text-xl font-semibold text-white mb-3">Renovación y Luminosidad</h3>
+                <p class="text-gray-400 text-sm">Peeling químico profesional y Hydrafacial para una limpieza profunda y piel radiante.</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl hover:bg-white/5 transition duration-300">
+                <h3 class="text-xl font-semibold text-white mb-3">Bioestimulación</h3>
+                <p class="text-gray-400 text-sm">Bioestimuladores de colágeno y Ácido hialurónico para devolver la estructura y volumen natural.</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl hover:bg-white/5 transition duration-300">
+                <h3 class="text-xl font-semibold text-white mb-3">Tecnología Avanzada</h3>
+                <p class="text-gray-400 text-sm">Depilación láser indolora y Terapia LED facial para resultados duraderos y efectivos.</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl hover:bg-white/5 transition duration-300">
+                <h3 class="text-xl font-semibold text-white mb-3">Nutrición Dérmica</h3>
+                <p class="text-gray-400 text-sm">Mesoterapia facial y Mascarillas revitalizantes para inyectar vitalidad a tu rostro.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="reservas" class="py-24 px-6 bg-[#050505]">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-6 text-white">Reserva tu Espacio</h2>
+            <p class="text-gray-400 mb-10">Selecciona el horario que mejor se adapte a ti. Nuestro sistema opera 24/7.</p>
+            
+            <div class="calendly-inline-widget rounded-xl overflow-hidden shadow-2xl" data-url="https://calendly.com/TU_USUARIO_DE_CALENDLY" style="min-width:320px;height:700px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            </div>
+    </section>
+
+    <footer class="py-10 text-center border-t border-white/10 text-gray-600 text-sm mt-10">
+        <p>&copy; 2026 Clínica de Estética. Todos los derechos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/573000000000?text=Hola,%20estoy%20en%20la%20página%20web%20y%20quiero%20información." target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 bg-white text-black p-4 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 z-50 flex items-center justify-center group">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+        <span class="absolute right-16 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-white/20">
+            Hablar con Asesor
+        </span>
+    </a>
+
+</body>
+</html>
