@@ -3,80 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica de Estética Avanzada</title>
+    <title>Estética y Bienestar | Máxima Expresión de tu Piel</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        slateDark: '#121826', /* Pizarra/Azul oscuro profundo */
+                        slateCard: '#1E2532',
+                        nudeGold: '#E6CDB8',  /* Nude luminoso / Oro rosa pálido */
+                        nudeGoldHover: '#D4B8A1',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #f3f4f6; }
-        .glass-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
+        /* Custom Utilities */
+        .text-gradient {
+            background: linear-gradient(to right, #E6CDB8, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px -10px rgba(230, 205, 184, 0.15);
+            border-color: rgba(230, 205, 184, 0.4);
+        }
     </style>
 </head>
-<body class="antialiased">
+<body class="bg-slateDark text-gray-300 font-sans antialiased selection:bg-nudeGold selection:text-slateDark">
 
-    <header class="relative flex flex-col items-center justify-center min-h-screen text-center px-6 overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 z-0"></div>
-        <div class="z-10 max-w-3xl">
-            <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-white">
-                Belleza en su <span class="text-gray-400">máxima expresión.</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-400 mb-10 font-light">
-                Tecnología de vanguardia y tratamientos personalizados para transformar tu piel y resaltar tu bienestar.
-            </p>
-            <a href="#reservas" class="inline-block bg-white text-black px-10 py-4 rounded-full font-semibold text-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105">
-                Agendar Valoración
-            </a>
+    <nav class="fixed w-full z-50 bg-slateDark/90 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#" class="font-heading font-bold text-2xl tracking-wide text-white">
+                        Estética<span class="text-nudeGold">&</span>Bienestar
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#servicios" class="hover:text-nudeGold transition-colors px-3 py-2 text-sm font-medium">Servicios</a>
+                        <a href="#nosotros" class="hover:text-nudeGold transition-colors px-3 py-2 text-sm font-medium">Por qué elegirnos</a>
+                    </div>
+                </div>
+                <div>
+                    <a href="#contacto" class="bg-nudeGold text-slateDark hover:bg-nudeGoldHover font-heading font-semibold px-6 py-2.5 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(230,205,184,0.2)] hover:shadow-[0_0_25px_rgba(230,205,184,0.4)] text-sm">
+                        Agendar Cita
+                    </a>
+                </div>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <section class="py-24 px-6 max-w-7xl mx-auto" id="servicios">
-        <h2 class="text-3xl md:text-4xl font-semibold mb-16 text-center text-white tracking-tight">Nuestros Tratamientos</h2>
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex items-center min-h-[90vh]">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-[0.07] mix-blend-luminosity"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-slateDark/50 via-slateDark to-slateDark"></div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="glass-card p-8 rounded-2xl hover:bg-white/5 transition duration-300">
-                <h3 class="text-xl font-semibold text-white mb-3">Rejuvenecimiento Facial</h3>
-                <p class="text-gray-400 text-sm">Radiofrecuencia, Dermapen (Microneedling) y Toxina Botulínica para atenuar líneas de expresión.</p>
-            </div>
-            <div class="glass-card p-8 rounded-2xl hover:bg-white/5 transition duration-300">
-                <h3 class="text-xl font-semibold text-white mb-3">Renovación y Luminosidad</h3>
-                <p class="text-gray-400 text-sm">Peeling químico profesional y Hydrafacial para una limpieza profunda y piel radiante.</p>
-            </div>
-            <div class="glass-card p-8 rounded-2xl hover:bg-white/5 transition duration-300">
-                <h3 class="text-xl font-semibold text-white mb-3">Bioestimulación</h3>
-                <p class="text-gray-400 text-sm">Bioestimuladores de colágeno y Ácido hialurónico para devolver la estructura y volumen natural.</p>
-            </div>
-            <div class="glass-card p-8 rounded-2xl hover:bg-white/5 transition duration-300">
-                <h3 class="text-xl font-semibold text-white mb-3">Tecnología Avanzada</h3>
-                <p class="text-gray-400 text-sm">Depilación láser indolora y Terapia LED facial para resultados duraderos y efectivos.</p>
-            </div>
-            <div class="glass-card p-8 rounded-2xl hover:bg-white/5 transition duration-300">
-                <h3 class="text-xl font-semibold text-white mb-3">Nutrición Dérmica</h3>
-                <p class="text-gray-400 text-sm">Mesoterapia facial y Mascarillas revitalizantes para inyectar vitalidad a tu rostro.</p>
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-8 text-center z-10">
+            <h1 class="font-heading text-5xl md:text-7xl font-bold tracking-tight text-white mb-6">
+                Proyecta tu <span class="text-gradient">Mejor Versión</span>.
+            </h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed mb-10">
+                Cuidado personal avanzado diseñado para la excelencia. Descubre el equilibrio perfecto entre ciencia, lujo y bienestar, con tratamientos adaptados a la biología única de cada piel.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contacto" class="bg-nudeGold text-slateDark hover:bg-nudeGoldHover font-heading font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(230,205,184,0.3)] hover:shadow-[0_0_40px_rgba(230,205,184,0.5)] text-lg hover:-translate-y-1">
+                    Reserva tu Valoración
+                </a>
+                <a href="#servicios" class="bg-transparent border border-gray-600 text-white hover:border-nudeGold hover:text-nudeGold font-heading font-semibold px-8 py-4 rounded-full transition-all duration-300 text-lg">
+                    Explorar Tratamientos
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="reservas" class="py-24 px-6 bg-[#050505]">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-semibold mb-6 text-white">Reserva tu Espacio</h2>
-            <p class="text-gray-400 mb-10">Selecciona el horario que mejor se adapte a ti. Nuestro sistema opera 24/7.</p>
-            
-            <div class="calendly-inline-widget rounded-xl overflow-hidden shadow-2xl" data-url="https://calendly.com/TU_USUARIO_DE_CALENDLY" style="min-width:320px;height:700px;"></div>
-            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <section id="servicios" class="py-20 bg-slateDark relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-nudeGold font-semibold tracking-wider uppercase text-sm mb-2">Fundamentos de Belleza</h2>
+                <h3 class="font-heading text-3xl md:text-4xl font-bold text-white">Cuidado Esencial</h3>
             </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-slateCard border border-white/5 p-8 rounded-2xl card-hover group">
+                    <h4 class="font-heading text-xl font-semibold text-white mb-3 group-hover:text-nudeGold transition-colors">Limpieza Facial Profunda</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Libera tus poros y recupera la frescura absoluta de una piel que respira salud y vitalidad.</p>
+                </div>
+                <div class="bg-slateCard border border-white/5 p-8 rounded-2xl card-hover group">
+                    <h4 class="font-heading text-xl font-semibold text-white mb-3 group-hover:text-nudeGold transition-colors">Tratamientos Rejuvenecedores</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Atenúa las huellas del tiempo y devuelve la firmeza natural, revelando un rostro descansado.</p>
+                </div>
+                <div class="bg-slateCard border border-white/5 p-8 rounded-2xl card-hover group">
+                    <h4 class="font-heading text-xl font-semibold text-white mb-3 group-hover:text-nudeGold transition-colors">Depilación Láser</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Piel perpetuamente suave y libre de vello, mediante tecnología clínica indolora y altamente eficaz.</p>
+                </div>
+                <div class="bg-slateCard border border-white/5 p-8 rounded-2xl card-hover group">
+                    <h4 class="font-heading text-xl font-semibold text-white mb-3 group-hover:text-nudeGold transition-colors">Antiedad y Revitalización</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Un impulso de energía celular que ilumina y tensa tu piel desde la primera sesión.</p>
+                </div>
+                <div class="bg-slateCard border border-white/5 p-8 rounded-2xl card-hover group">
+                    <h4 class="font-heading text-xl font-semibold text-white mb-3 group-hover:text-nudeGold transition-colors">Peelings y Mascarillas</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Renovación celular intensiva para unificar el tono y lograr una textura facial impecable.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer class="py-10 text-center border-t border-white/10 text-gray-600 text-sm mt-10">
-        <p>&copy; 2026 Clínica de Estética. Todos los derechos reservados.</p>
-    </footer>
+    <section class="py-20 bg-[#0d121c] relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-nudeGold font-semibold tracking-wider uppercase text-sm mb-2">Innovación Clínica</h2>
+                <h3 class="font-heading text-3xl md:text-4xl font-bold text-white">Tratamientos Avanzados</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-slateCard border border-white/5 p-8 rounded-2xl card-hover group">
+                    <h4 class="font-heading text-xl font-semibold text-white mb-3 group-hover:text-nudeGold transition-colors">Radiofrecuencia Facial</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Estimula la producción de colágeno natural para un efecto lifting tensor sin necesidad de cirugía.</p>
+                </div>
+                <div class="bg-slateCard border border-white/5 p-8 rounded-2xl card-hover group">
+                    <h4 class="font-heading text-xl font-semibold text-white mb-3 group-hover:text-nudeGold transition-colors">Dermapen (Microneedling)</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Micro-regeneración precisa para borrar cicatrices, manchas y difuminar líneas finas progresivamente.</p>
+                </div>
+                <div class="bg-slateCard border border-white/5 p-8 rounded-2xl card-hover group">
+                    <h4 class="font-heading text-xl font-semibold text-white mb-3 group-hover:text-nudeGold transition-colors">Peeling Químico Profesional</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Transformación profunda que remueve capas dañadas para revelar una piel nueva, lisa y luminosa.</p>
+                </div>
+                <div class="bg-slateCard border border-white/5 p-8 rounded-2xl card-hover group">
+                    <h4 class="font-heading text-xl font-semibold text-white mb-3 group-hover:text-nudeGold transition-colors">Bioestimuladores de Colágeno</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Redensifica tu piel desde el interior, recuperando el volumen perdido con resultados naturales y duraderos.</p>
+                </div>
+                <div class="bg-slateCard border border-white/5 p-8 rounded-2xl card-hover group">
+                    <h4 class="font-heading text-xl font-semibold text-white mb-3 group-hover:text-nudeGold transition-colors">Terapia LED Facial</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Luz clínica purificadora y antiinflamatoria que acelera la sanación celular y potencia tu brillo.</p>
+                </div>
+                <div class="bg-slateCard border border-white/5 p-8 rounded-2xl card-hover group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-nudeGold text-slateDark text-xs font-bold px-3 py-1 rounded-bl-lg">PREMIUM</div>
+                    <h4 class="font-heading text-xl font-semibold text-white mb-3 group-hover:text-nudeGold transition-colors">Hydrafacial</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">El tratamiento estrella: limpia, extrae e hidrata en un solo paso de máximo lujo para tu rostro.</p>
+                </div>
+                <div class="bg-slateCard border border-white/5 p-8 rounded-2xl card-hover group">
+                    <h4 class="font-heading text-xl font-semibold text-white mb-3 group-hover:text-nudeGold transition-colors">Mesoterapia Facial</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Un cóctel vitamínico depositado directamente en la dermis para una hidratación y nutrición extremas.</p>
+                </div>
+                <div class="bg-slateCard border border-white/5 p-8 rounded-2xl card-hover group">
+                    <h4 class="font-heading text-xl font-semibold text-white mb-3 group-hover:text-nudeGold transition-colors">Ácido Hialurónico</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Hidratación estructural profunda y perfilado sutil para armonizar y resaltar tus mejores rasgos.</p>
+                </div>
+                <div class="bg-slateCard border border-white/5 p-8 rounded-2xl card-hover group">
+                    <h4 class="font-heading text-xl font-semibold text-white mb-3 group-hover:text-nudeGold transition-colors">Toxina Botulínica</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Suaviza y relaja las líneas de expresión manteniendo intacta la naturalidad y elegancia de tu mirada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <a href="https://wa.me/573000000000?text=Hola,%20estoy%20en%20la%20página%20web%20y%20quiero%20información." target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 bg-white text-black p-4 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 z-50 flex items-center justify-center group">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-        </svg>
-        <span class="absolute right-16 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-white/20">
-            Hablar con Asesor
-        </span>
-    </a>
+    <section id="nosotros" class="py-24 bg-slateDark border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div class="p-6">
+                    <div class="w-16 h-16 mx-auto bg-slateCard rounded-full flex items-center justify-center mb-6 border border-nudeGold/30 text-nudeGold">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h4 class="font-heading text-xl font-bold text-white mb-4">Atención Unisex</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Protocolos rigurosamente adaptados a las necesidades específicas de la piel masculina y femenina. Cuidado personal sin etiquetas.</p>
+                </div>
+                <div class="p-6">
+                    <div class="w-16 h-16 mx-auto bg-slateCard rounded-full flex items-center justify-center mb-6 border border-nudeGold/30 text-nudeGold">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h4 class="font-heading text-xl font-bold text-white mb-4">Tecnología Avanzada</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Equipamiento clínico de última generación respaldado por la ciencia para garantizar resultados visibles, seguros y perdurables.</p>
+                </div>
+                <div class="p-6">
+                    <div class="w-16 h-16 mx-auto bg-slateCard rounded-full flex items-center justify-center mb-6 border border-nudeGold/30 text-nudeGold">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                    </div>
+                    <h4 class="font-heading text-xl font-bold text-white mb-4">Profesionales Certificados</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Especialistas médicos dedicados a tu bienestar operando bajo los más estrictos y rigurosos estándares de calidad internacional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-24 relative overflow-hidden bg-nudeGold">
+        <div class="absolute inset-0 bg-gradient-to-r from-nudeGold via-[#dcb097] to-nudeGold opacity-90"></div>
+        <div class="relative max-w-4xl mx-auto px-6 text-center z-10">
+            <h2 class="font-heading text-4xl md:text-5xl font-bold text-slateDark mb-6">Tu Transformación Comienza Hoy.</h2>
+            <p class="text-slateDark/80 font-medium text-lg mb-10 max-w-2xl mx-auto">Habla directamente con nuestros especialistas. Recibe asesoría personalizada y agenda el tratamiento que tu piel merece.</p>
+            
+            <a href="https://wa.me/573000000000?text=Hola,%20quiero%20agendar%20una%20valoración%20en%20Estética%20y%20Bienestar." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-slateDark text-white hover:bg-black font-heading font-bold px-10 py-5 rounded-full transition-all duration-300 shadow-2xl hover:shadow-black/40 hover:-translate-y-1 text-lg group">
+                <svg class="w-6 h-6 mr-3 text-green-400 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                Agendar por WhatsApp
+            </a>
+            <p class="text-slateDark/60 text-sm mt-6 font-medium">Atención rápida y segura. Respuesta inmediata.</p>
+        </div>
+    </section>
+
+    <footer class="bg-slateDark border-t border-white/5 py-8 text-center">
+        <p class="text-gray-600 text-sm font-medium">&copy; 2026 Estética y Bienestar. Diseñado para la excelencia.</p>
+    </footer>
 
 </body>
 </html>
