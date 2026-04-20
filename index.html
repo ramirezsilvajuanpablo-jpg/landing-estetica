@@ -36,22 +36,11 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        /* Ocultar scrollbar en el carrusel pero mantener funcionalidad */
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        /* Animación suave para las pestañas */
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.4s ease-in-out;
-        }
-        .tab-content.active {
-            display: flex;
-        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .tab-content { display: none; animation: fadeIn 0.4s ease-in-out; }
+        .tab-content.active { display: flex; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -70,7 +59,7 @@
                 </div>
             </a>
             <div class="hidden md:flex space-x-6 text-sm font-semibold">
-                <a href="#galeria" class="text-brandBlue hover:text-brandGreen transition-colors">Galería</a>
+                <a href="#tecnologia" class="text-brandBlue hover:text-brandGreen transition-colors">Tecnología</a>
                 <a href="#servicios" class="text-brandBlue hover:text-brandGreen transition-colors">Tratamientos</a>
                 <a href="#contacto" class="text-brandBlue hover:text-brandGreen transition-colors">Contacto</a>
             </div>
@@ -106,13 +95,13 @@
 
     <main class="bg-white">
         
-        <section id="galeria" class="py-20 px-6 max-w-7xl mx-auto">
-            <div class="flex justify-between items-end mb-10">
+        <section id="tecnologia" class="py-20 px-6 max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
                 <div>
-                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-brandBlue pb-2">Nuestras Instalaciones y Resultados</h2>
-                    <p class="text-gray-500">Conoce el espacio donde ocurre la magia.</p>
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-brandBlue pb-2">Instrumentos de Última Tecnología</h2>
+                    <p class="text-gray-500">Haz clic en cada equipo para conocer cómo transforma tu piel y tu cuerpo.</p>
                 </div>
-                <div class="hidden md:flex gap-2">
+                <div class="hidden md:flex gap-2 shrink-0">
                     <button onclick="scrollCarousel('left')" class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-brandBlue hover:bg-brandBlue hover:text-white transition-colors">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                     </button>
@@ -122,19 +111,128 @@
                 </div>
             </div>
 
-            <div id="imageCarousel" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-4">
-                <div class="snap-center shrink-0 w-[85vw] md:w-[400px] h-[300px] rounded-2xl overflow-hidden shadow-md">
-                    <img src="galeria-1.jpg" onerror="this.src='https://images.unsplash.com/photo-1519415943484-9fa1873496d4?q=80&w=800&auto=format&fit=crop'" class="w-full h-full object-cover">
+            <div id="techCarousel" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-6">
+                
+                <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-1')">
+                    <img src="escaner.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Escáner'" class="w-full h-full object-contain p-4">
+                    <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
+                    <div id="info-1" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                        <h4 class="text-white font-heading font-bold text-2xl mb-3">Analizador Facial Inteligente</h4>
+                        <p class="text-blue-100 text-sm leading-relaxed mb-6">Escáner de alta tecnología que revela las necesidades ocultas de tu piel. Detecta manchas, poros obstruidos, arrugas profundas y daño solar para crear tu plan perfecto.</p>
+                        <span class="text-xs bg-white text-brandBlue px-4 py-2 rounded-full font-bold uppercase tracking-wider">Cerrar</span>
+                    </div>
                 </div>
-                <div class="snap-center shrink-0 w-[85vw] md:w-[400px] h-[300px] rounded-2xl overflow-hidden shadow-md">
-                    <img src="galeria-2.jpg" onerror="this.src='https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop'" class="w-full h-full object-cover">
+
+                <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-2')">
+                    <img src="hidrafacial.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Hydrafacial'" class="w-full h-full object-contain p-4">
+                    <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
+                    <div id="info-2" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                        <h4 class="text-white font-heading font-bold text-2xl mb-3">H2O2 Small Bubble (Hydrafacial)</h4>
+                        <p class="text-blue-100 text-sm leading-relaxed mb-6">Plataforma multifuncional para limpiezas profundas de lujo. Combina hidrodermoabrasión, peeling ultrasónico y oxigenación para extraer impurezas sin dolor, infundiendo antioxidantes puros.</p>
+                        <span class="text-xs bg-white text-brandBlue px-4 py-2 rounded-full font-bold uppercase tracking-wider">Cerrar</span>
+                    </div>
                 </div>
-                <div class="snap-center shrink-0 w-[85vw] md:w-[400px] h-[300px] rounded-2xl overflow-hidden shadow-md">
-                    <img src="galeria-3.jpg" onerror="this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop'" class="w-full h-full object-cover">
+
+                <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-3')">
+                    <img src="slimtech.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Slimtech'" class="w-full h-full object-contain p-4">
+                    <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
+                    <div id="info-3" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                        <h4 class="text-white font-heading font-bold text-2xl mb-3">Plataforma Slimtech Pro</h4>
+                        <p class="text-blue-100 text-sm leading-relaxed mb-6">El aliado perfecto para el moldeamiento corporal. Combina Cavitación, Radiofrecuencia y Vacuum para reducir medidas, eliminar grasa localizada y tensar la piel.</p>
+                        <span class="text-xs bg-white text-brandBlue px-4 py-2 rounded-full font-bold uppercase tracking-wider">Cerrar</span>
+                    </div>
                 </div>
-                <div class="snap-center shrink-0 w-[85vw] md:w-[400px] h-[300px] rounded-2xl overflow-hidden shadow-md">
-                    <img src="galeria-4.jpg" onerror="this.src='https://images.unsplash.com/photo-1611625618313-6af8cece5c20?q=80&w=800&auto=format&fit=crop'" class="w-full h-full object-cover">
+
+                <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-4')">
+                    <img src="carboxi.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Carboxiterapia'" class="w-full h-full object-contain p-4">
+                    <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
+                    <div id="info-4" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                        <h4 class="text-white font-heading font-bold text-2xl mb-3">CarboCell (Carboxiterapia)</h4>
+                        <p class="text-blue-100 text-sm leading-relaxed mb-6">Infusión controlada de CO2 de grado médico. Oxigena las células y mejora drásticamente la circulación para combatir celulitis, flacidez, estrías y ojeras rebeldes.</p>
+                        <span class="text-xs bg-white text-brandBlue px-4 py-2 rounded-full font-bold uppercase tracking-wider">Cerrar</span>
+                    </div>
                 </div>
+
+                <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-5')">
+                    <img src="laser.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Laser'" class="w-full h-full object-contain p-4">
+                    <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
+                    <div id="info-5" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                        <h4 class="text-white font-heading font-bold text-2xl mb-3">Láser de Diodo Q&R</h4>
+                        <p class="text-blue-100 text-sm leading-relaxed mb-6">Tecnología definitiva y segura para la eliminación permanente del vello. Actúa rápido, protege tu piel e incluye sistema de enfriamiento para una sesión casi indolora.</p>
+                        <span class="text-xs bg-white text-brandBlue px-4 py-2 rounded-full font-bold uppercase tracking-wider">Cerrar</span>
+                    </div>
+                </div>
+
+                <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-6')">
+                    <img src="alta-frecuencia.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Alta+Frecuencia'" class="w-full h-full object-contain p-4">
+                    <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
+                    <div id="info-6" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                        <h4 class="text-white font-heading font-bold text-2xl mb-3">Alta Frecuencia</h4>
+                        <p class="text-blue-100 text-sm leading-relaxed mb-6">Electrodos de cristal que emiten corrientes purificadoras. Actúa como un potente bactericida, cierra los poros tras las extracciones, oxigena la piel y estimula el folículo capilar.</p>
+                        <span class="text-xs bg-white text-brandBlue px-4 py-2 rounded-full font-bold uppercase tracking-wider">Cerrar</span>
+                    </div>
+                </div>
+
+                <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-7')">
+                    <img src="microdermoabrasion.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Microdermoabrasion'" class="w-full h-full object-contain p-4">
+                    <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
+                    <div id="info-7" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                        <h4 class="text-white font-heading font-bold text-2xl mb-3">Punta de Diamante</h4>
+                        <p class="text-blue-100 text-sm leading-relaxed mb-6">Equipo de microdermoabrasión que exfolia mecánicamente la piel, barriendo células muertas para revelar un rostro liso, atenuando manchas y líneas de expresión finas.</p>
+                        <span class="text-xs bg-white text-brandBlue px-4 py-2 rounded-full font-bold uppercase tracking-wider">Cerrar</span>
+                    </div>
+                </div>
+
+                <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-8')">
+                    <img src="mascarillas.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Jelly+Masks'" class="w-full h-full object-contain p-4">
+                    <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
+                    <div id="info-8" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                        <h4 class="text-white font-heading font-bold text-2xl mb-3">Jelly Masks Premium</h4>
+                        <p class="text-blue-100 text-sm leading-relaxed mb-6">Fórmulas hidroplásticas ricas en electrolitos naturales (Colágeno, Rosa Búlgara, Kiwi). Sellan la hidratación, desinflaman y reparan la barrera cutánea brindando un efecto "glow" instantáneo.</p>
+                        <span class="text-xs bg-white text-brandBlue px-4 py-2 rounded-full font-bold uppercase tracking-wider">Cerrar</span>
+                    </div>
+                </div>
+
+                <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-9')">
+                    <img src="vaporizador.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Vaporizador'" class="w-full h-full object-contain p-4">
+                    <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
+                    <div id="info-9" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                        <h4 class="text-white font-heading font-bold text-2xl mb-3">Vaporizador de Ozono</h4>
+                        <p class="text-blue-100 text-sm leading-relaxed mb-6">El paso esencial para una limpieza perfecta. Emite vapor purificante y oxigenado que abre los poros de forma segura, facilitando extracciones y desintoxicando la piel.</p>
+                        <span class="text-xs bg-white text-brandBlue px-4 py-2 rounded-full font-bold uppercase tracking-wider">Cerrar</span>
+                    </div>
+                </div>
+
+                <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-10')">
+                    <img src="maderoterapia.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Maderoterapia'" class="w-full h-full object-contain p-4">
+                    <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
+                    <div id="info-10" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                        <h4 class="text-white font-heading font-bold text-2xl mb-3">Set de Maderoterapia</h4>
+                        <p class="text-blue-100 text-sm leading-relaxed mb-6">Técnica milenaria 100% natural. Diseñados anatómicamente para tonificar, destruir grasa localizada, combatir la celulitis y realizar un efectivo drenaje linfático.</p>
+                        <span class="text-xs bg-white text-brandBlue px-4 py-2 rounded-full font-bold uppercase tracking-wider">Cerrar</span>
+                    </div>
+                </div>
+
+                <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-11')">
+                    <img src="led-azul.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=LED+Azul'" class="w-full h-full object-contain p-4">
+                    <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
+                    <div id="info-11" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                        <h4 class="text-white font-heading font-bold text-2xl mb-3">Terapia de Luz LED Azul</h4>
+                        <p class="text-blue-100 text-sm leading-relaxed mb-6">Fototerapia especializada con longitud de onda específica. Actúa como un potente bactericida, deteniendo los brotes de acné, reduciendo poros y controlando la producción de grasa.</p>
+                        <span class="text-xs bg-white text-brandBlue px-4 py-2 rounded-full font-bold uppercase tracking-wider">Cerrar</span>
+                    </div>
+                </div>
+
+                <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-12')">
+                    <img src="led-roja.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=LED+Roja'" class="w-full h-full object-contain p-4">
+                    <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
+                    <div id="info-12" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
+                        <h4 class="text-white font-heading font-bold text-2xl mb-3">Terapia de Luz LED Roja</h4>
+                        <p class="text-blue-100 text-sm leading-relaxed mb-6">El poder del rejuvenecimiento a través de la luz. Penetra hasta la dermis estimulando la producción masiva de colágeno, atenuando arrugas y devolviendo luminosidad a la piel.</p>
+                        <span class="text-xs bg-white text-brandBlue px-4 py-2 rounded-full font-bold uppercase tracking-wider">Cerrar</span>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -145,22 +243,13 @@
             </div>
 
             <div class="flex overflow-x-auto hide-scrollbar gap-2 md:gap-4 justify-start md:justify-center mb-12 border-b border-gray-200 pb-4 px-2">
-                <button onclick="openTab('facial', this)" class="tab-btn px-6 py-3 rounded-full font-bold text-sm whitespace-nowrap transition-all bg-brandBlue text-white shadow-md">
-                    Estética Facial
-                </button>
-                <button onclick="openTab('corporal', this)" class="tab-btn px-6 py-3 rounded-full font-bold text-sm whitespace-nowrap transition-all text-gray-500 hover:bg-gray-100">
-                    Estética Corporal
-                </button>
-                <button onclick="openTab('capilar', this)" class="tab-btn px-6 py-3 rounded-full font-bold text-sm whitespace-nowrap transition-all text-gray-500 hover:bg-gray-100">
-                    Cuidado Capilar
-                </button>
-                <button onclick="openTab('sueroterapia', this)" class="tab-btn px-6 py-3 rounded-full font-bold text-sm whitespace-nowrap transition-all text-gray-500 hover:bg-gray-100">
-                    Sueroterapia y Terapias Alt.
-                </button>
+                <button onclick="openTab('facial', this)" class="tab-btn px-6 py-3 rounded-full font-bold text-sm whitespace-nowrap transition-all bg-brandBlue text-white shadow-md">Estética Facial</button>
+                <button onclick="openTab('corporal', this)" class="tab-btn px-6 py-3 rounded-full font-bold text-sm whitespace-nowrap transition-all text-gray-500 hover:bg-gray-100">Estética Corporal</button>
+                <button onclick="openTab('capilar', this)" class="tab-btn px-6 py-3 rounded-full font-bold text-sm whitespace-nowrap transition-all text-gray-500 hover:bg-gray-100">Cuidado Capilar</button>
+                <button onclick="openTab('sueroterapia', this)" class="tab-btn px-6 py-3 rounded-full font-bold text-sm whitespace-nowrap transition-all text-gray-500 hover:bg-gray-100">Sueroterapia y Terapias Alt.</button>
             </div>
 
             <div class="w-full">
-                
                 <div id="facial" class="tab-content active flex-col lg:flex-row gap-8">
                     <div class="w-full lg:w-1/3 h-[300px] lg:h-auto rounded-3xl overflow-hidden shadow-lg shrink-0">
                         <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop" alt="Estética Facial" class="w-full h-full object-cover">
@@ -265,7 +354,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -326,35 +414,47 @@
     </a>
 
     <script>
-        // Función para cambiar de pestaña (Tabs)
+        // Sistema de Pestañas
         function openTab(tabId, btnElement) {
-            // 1. Ocultar todos los contenidos de pestañas
             document.querySelectorAll('.tab-content').forEach(tab => {
                 tab.classList.remove('active');
             });
-            // 2. Mostrar la pestaña seleccionada
             document.getElementById(tabId).classList.add('active');
 
-            // 3. Resetear estilos de todos los botones
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.remove('bg-brandBlue', 'text-white', 'shadow-md');
                 btn.classList.add('text-gray-500', 'hover:bg-gray-100');
             });
-            // 4. Aplicar estilos activos al botón presionado
             btnElement.classList.remove('text-gray-500', 'hover:bg-gray-100');
             btnElement.classList.add('bg-brandBlue', 'text-white', 'shadow-md');
         }
 
-        // Función para mover el Carrusel de Galería
+        // Flechas del Carrusel de Tecnología
         function scrollCarousel(direction) {
-            const carousel = document.getElementById('imageCarousel');
-            const scrollAmount = window.innerWidth > 768 ? 420 : 320; // Dependiendo de pantalla
+            const carousel = document.getElementById('techCarousel');
+            const scrollAmount = window.innerWidth > 768 ? 380 : 320;
             
             if (direction === 'left') {
                 carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
             } else {
                 carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             }
+        }
+
+        // Sistema de Overlay para revelar info de tecnología al hacer clic
+        function toggleTechInfo(id) {
+            const targetInfo = document.getElementById(id);
+            
+            if (!targetInfo.classList.contains('opacity-0')) {
+                targetInfo.classList.add('opacity-0', 'pointer-events-none');
+                return;
+            }
+
+            document.querySelectorAll('.tech-info').forEach(info => {
+                info.classList.add('opacity-0', 'pointer-events-none');
+            });
+
+            targetInfo.classList.remove('opacity-0', 'pointer-events-none');
         }
     </script>
 </body>
