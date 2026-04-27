@@ -3,8 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estética y Bienestar | Tu Máxima Expresión en Sogamoso</title>
-    
+    <title>Estética y Bienestar Sogamoso | Tratamientos Faciales, Corporales y Capilares</title>
+    <meta name="description" content="Centro de estética y bienestar en Sogamoso con 11 tecnologías de última generación. Tratamientos faciales, corporales, capilares y sueroterapia. Primera valoración gratis. Cra 9 #16a-31, Sogamoso.">
+    <link rel="canonical" href="https://esteticaybienestar.vercel.app/">
+
+    <!-- Open Graph / Facebook Ads -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://esteticaybienestar.vercel.app/">
+    <meta property="og:title" content="Estética y Bienestar Sogamoso | 11 Tecnologías de Última Generación">
+    <meta property="og:description" content="Tratamientos personalizados para realzar tu belleza. Facial, corporal, capilar y sueroterapia. Primera valoración GRATIS para nuevas clientas.">
+    <meta property="og:image" content="https://esteticaybienestar.vercel.app/Logo.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:site_name" content="Estética y Bienestar">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Estética y Bienestar Sogamoso">
+    <meta name="twitter:description" content="11 tecnologías de última generación. Primera valoración GRATIS. Sogamoso, Colombia.">
+    <meta name="twitter:image" content="https://esteticaybienestar.vercel.app/Logo.jpg">
+
+    <!-- Schema.org Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BeautySalon",
+      "name": "Estética y Bienestar",
+      "image": "https://esteticaybienestar.vercel.app/Logo.jpg",
+      "url": "https://esteticaybienestar.vercel.app",
+      "telephone": "+573134856242",
+      "email": "esteticaryrsogamoso@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Cra 9 # 16a-31",
+        "addressLocality": "Sogamoso",
+        "addressRegion": "Boyacá",
+        "addressCountry": "CO"
+      },
+      "sameAs": [
+        "https://www.instagram.com/estetica95015/",
+        "https://www.facebook.com/profile.php?id=61579538362445"
+      ],
+      "priceRange": "$$",
+      "description": "Centro de estética y bienestar en Sogamoso con 11 tecnologías de última generación. Tratamientos personalizados faciales, corporales, capilares y sueroterapia."
+    }
+    </script>
+
+    <!-- =====================================================
+         FACEBOOK PIXEL — Descomentar y reemplazar PIXEL_ID
+         con tu ID real desde Meta Business Suite → Eventos
+         =====================================================
+    <script>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'TU_PIXEL_ID_AQUI');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=TU_PIXEL_ID_AQUI&ev=PageView&noscript=1"/></noscript>
+    -->
+
+    <!-- =====================================================
+         GOOGLE ANALYTICS 4 — Descomentar y reemplazar G-XXXXXX
+         con tu Measurement ID desde analytics.google.com
+         =====================================================
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -53,6 +128,13 @@
 </head>
 <body class="bg-white text-gray-600 antialiased selection:bg-brandBlue selection:text-white font-sans">
 
+    <!-- BARRA DE URGENCIA -->
+    <div id="anuncio-bar" class="bg-brandGreen text-white text-center py-2.5 px-4 text-sm font-semibold relative">
+        🎁 <strong>Primera valoración facial GRATIS</strong> para nuevas clientas — cupos limitados esta semana
+        <a href="#reservas" class="underline ml-2 hover:text-green-100 transition-colors">Agendar ahora →</a>
+        <button onclick="document.getElementById('anuncio-bar').style.display='none'" class="absolute right-3 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-lg leading-none">×</button>
+    </div>
+
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center h-20">
             <a href="#inicio" class="flex items-center gap-2 sm:gap-3 h-full hover:opacity-90 transition-opacity">
@@ -82,17 +164,43 @@
         </div>
         
         <div class="z-10 max-w-4xl mt-10 relative">
-            <span class="text-brandGreen font-bold tracking-widest uppercase text-sm mb-4 block">Renovación integral</span>
+            <span class="inline-flex items-center gap-2 bg-brandGreen/10 text-brandGreen font-bold tracking-widest uppercase text-xs mb-5 px-4 py-2 rounded-full border border-brandGreen/20">
+                ⭐ Más de 500 clientas satisfechas en Sogamoso
+            </span>
             <h1 class="font-heading text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-brandBlue leading-tight">
-                Armonía entre tu <br><span class="text-gradient">cuerpo y mente.</span>
+                La piel que siempre <br><span class="text-gradient">quisiste, aquí.</span>
             </h1>
             <p class="text-lg md:text-xl text-gray-500 mb-10 font-medium max-w-2xl mx-auto leading-relaxed">
-                En Sogamoso, somos expertos en recuperación, bienestar y estética. Brindamos tratamientos personalizados enfocados en realzar tu belleza y mejorar tu calidad de vida, para que te sientas y te veas increíble.
+                En Sogamoso, somos expertos en recuperación, bienestar y estética con <strong class="text-brandBlue">11 tecnologías de última generación</strong>. Tratamientos personalizados para que te sientas y te veas increíble.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#reservas" class="inline-block bg-brandGreen text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-brandGreenLight transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
-                    Agenda tu Valoración
+                    Agenda tu Valoración Gratis
                 </a>
+                <a href="https://wa.me/573134856242?text=Hola,%20vi%20su%20página%20web%20y%20quiero%20información%20sobre%20los%20tratamientos." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-white border-2 border-[#25D366] text-[#25D366] px-10 py-4 rounded-full font-bold text-lg hover:bg-[#25D366] hover:text-white transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-1">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    Consultar por WhatsApp
+                </a>
+            </div>
+
+            <!-- Stats row -->
+            <div class="flex flex-wrap justify-center gap-8 mt-14 pt-10 border-t border-gray-200/60">
+                <div class="text-center">
+                    <div class="font-heading text-3xl font-black text-brandBlue">11</div>
+                    <div class="text-xs text-gray-400 font-medium mt-1">Tecnologías<br>de punta</div>
+                </div>
+                <div class="text-center">
+                    <div class="font-heading text-3xl font-black text-brandBlue">500+</div>
+                    <div class="text-xs text-gray-400 font-medium mt-1">Clientas<br>satisfechas</div>
+                </div>
+                <div class="text-center">
+                    <div class="font-heading text-3xl font-black text-brandBlue">4</div>
+                    <div class="text-xs text-gray-400 font-medium mt-1">Especialidades<br>de tratamiento</div>
+                </div>
+                <div class="text-center">
+                    <div class="font-heading text-3xl font-black text-brandBlue">24/7</div>
+                    <div class="text-xs text-gray-400 font-medium mt-1">Agenda online<br>automática</div>
+                </div>
             </div>
         </div>
     </header>
@@ -446,6 +554,168 @@
 
     </main>
 
+        <!-- ===== TESTIMONIOS ===== -->
+        <section id="testimonios" class="py-20 px-6 bg-lightBg">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="text-brandGreen font-bold tracking-widest uppercase text-xs">Lo que dicen nuestras clientas</span>
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-brandBlue mt-2 pb-4">Resultados que hablan por sí solos</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                    <div class="bg-white rounded-3xl p-7 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-yellow-400 mb-4 text-lg">★★★★★</div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-5">"Llegué con la piel llena de manchas del sol y después de 3 sesiones de Hydrafacial el cambio fue increíble. Por fin me siento cómoda sin base. ¡Son las mejores en Sogamoso!"</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-brandBlue/10 rounded-full flex items-center justify-center font-heading font-bold text-brandBlue text-sm shrink-0">LM</div>
+                            <div>
+                                <div class="font-semibold text-sm text-brandBlue">Luisa M.</div>
+                                <div class="text-xs text-gray-400">Sogamoso · Hydrafacial</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl p-7 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-yellow-400 mb-4 text-lg">★★★★★</div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-5">"Me hice la depilación láser en piernas completas. Después de años depilándome cada semana, por fin me quité ese gasto y ese dolor. El sistema de enfriamiento hace que no duela nada."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-brandGreen/10 rounded-full flex items-center justify-center font-heading font-bold text-brandGreen text-sm shrink-0">VS</div>
+                            <div>
+                                <div class="font-semibold text-sm text-brandBlue">Valentina S.</div>
+                                <div class="text-xs text-gray-400">Sogamoso · Depilación Láser</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl p-7 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-yellow-400 mb-4 text-lg">★★★★★</div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-5">"Vine por los masajes post-cirugía y quedé enamorada del lugar. El trato es súper profesional y se nota que tienen equipos de verdad. Mi recuperación fue mucho más rápida de lo esperado."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-brandBlue/10 rounded-full flex items-center justify-center font-heading font-bold text-brandBlue text-sm shrink-0">CP</div>
+                            <div>
+                                <div class="font-semibold text-sm text-brandBlue">Carolina P.</div>
+                                <div class="text-xs text-gray-400">Tibasosa · Post-cirugía</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl p-7 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-yellow-400 mb-4 text-lg">★★★★★</div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-5">"El analizador facial me sorprendió. Me mostró daños solares que yo ni sabía que tenía. Me armaron un plan de tratamiento completamente personalizado. Eso no lo encuentras en cualquier centro."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-brandGreen/10 rounded-full flex items-center justify-center font-heading font-bold text-brandGreen text-sm shrink-0">AM</div>
+                            <div>
+                                <div class="font-semibold text-sm text-brandBlue">Alejandra M.</div>
+                                <div class="text-xs text-gray-400">Sogamoso · Diagnóstico Facial</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl p-7 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-yellow-400 mb-4 text-lg">★★★★★</div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-5">"Probé la sueroterapia después del gym y fue un cambio brutal en mi energía. Nada que ver con tomar vitaminas en pastilla. Me siento con mucha más vitalidad desde la primera sesión."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-brandBlue/10 rounded-full flex items-center justify-center font-heading font-bold text-brandBlue text-sm shrink-0">DG</div>
+                            <div>
+                                <div class="font-semibold text-sm text-brandBlue">Daniel G.</div>
+                                <div class="text-xs text-gray-400">Nobsa · Sueroterapia</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl p-7 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-yellow-400 mb-4 text-lg">★★★★★</div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-5">"La carboxiterapia para celulitis fue un golazo. Llevaba años probando cremas y nada. Aquí en 6 sesiones noté la diferencia real. Y el servicio es tan amable que una quiere volver siempre."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-brandGreen/10 rounded-full flex items-center justify-center font-heading font-bold text-brandGreen text-sm shrink-0">NR</div>
+                            <div>
+                                <div class="font-semibold text-sm text-brandBlue">Natalia R.</div>
+                                <div class="text-xs text-gray-400">Duitama · Carboxiterapia</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="text-center mt-12">
+                    <p class="text-gray-500 text-sm mb-4">¿Lista para tu transformación? Primera valoración sin costo.</p>
+                    <a href="#reservas" class="inline-block bg-brandBlue text-white px-10 py-4 rounded-full font-bold text-base hover:bg-brandBlueLight transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1">
+                        Quiero mi valoración gratis
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PREGUNTAS FRECUENTES ===== -->
+        <section id="faq" class="py-20 px-6 max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-brandGreen font-bold tracking-widest uppercase text-xs">FAQ</span>
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-brandBlue mt-2 pb-4">Preguntas frecuentes</h2>
+            </div>
+            <div class="space-y-3">
+
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-brandBlue hover:bg-lightBg transition-colors">
+                        ¿La valoración inicial realmente es gratis?
+                        <svg class="faq-arrow w-5 h-5 text-brandGreen shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-body hidden px-6 pb-5 text-sm text-gray-500 leading-relaxed">
+                        Sí, completamente gratis y sin compromiso. Analizamos tu piel con nuestro escáner facial inteligente, evaluamos tus objetivos y te diseñamos un plan personalizado. No hay presión para contratar nada ese día.
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-brandBlue hover:bg-lightBg transition-colors">
+                        ¿Cuántas sesiones necesito para ver resultados?
+                        <svg class="faq-arrow w-5 h-5 text-brandGreen shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-body hidden px-6 pb-5 text-sm text-gray-500 leading-relaxed">
+                        Depende del tratamiento. Con el Hydrafacial notarás resultados desde la primera sesión. Para depilación láser se recomiendan entre 6 y 8 sesiones para eliminación definitiva. En carboxiterapia los cambios son visibles a partir de la tercera sesión. En tu valoración te decimos exactamente qué esperar.
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-brandBlue hover:bg-lightBg transition-colors">
+                        ¿La depilación láser duele?
+                        <svg class="faq-arrow w-5 h-5 text-brandGreen shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-body hidden px-6 pb-5 text-sm text-gray-500 leading-relaxed">
+                        Nuestro láser de diodo incluye un sistema de enfriamiento integrado que hace el proceso indoloro. La mayoría de clientas lo describen como una leve sensación de calor, nada comparable al dolor de la cera o el hilo.
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-brandBlue hover:bg-lightBg transition-colors">
+                        ¿Atienden a hombres también?
+                        <svg class="faq-arrow w-5 h-5 text-brandGreen shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-body hidden px-6 pb-5 text-sm text-gray-500 leading-relaxed">
+                        Por supuesto. Atendemos a hombres especialmente en sueroterapia, masajes terapéuticos, depilación láser y tratamientos para manchas. El cuidado personal no tiene género.
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-brandBlue hover:bg-lightBg transition-colors">
+                        ¿Cómo puedo agendar mi cita?
+                        <svg class="faq-arrow w-5 h-5 text-brandGreen shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-body hidden px-6 pb-5 text-sm text-gray-500 leading-relaxed">
+                        Tienes tres formas: 1) Usa el formulario de reservas en esta misma página y escoge tu horario al instante. 2) Escríbenos por WhatsApp al +57 313 485 6242. 3) Llámanos directamente. El sistema opera 24/7 de forma automática.
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-brandBlue hover:bg-lightBg transition-colors">
+                        ¿Dónde están ubicados?
+                        <svg class="faq-arrow w-5 h-5 text-brandGreen shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-body hidden px-6 pb-5 text-sm text-gray-500 leading-relaxed">
+                        Estamos en la Cra 9 # 16a-31 en el centro de Sogamoso. Para la ubicación exacta y cómo llegar, escríbenos al WhatsApp y te enviamos el pin de Google Maps.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     <section id="reservas" class="py-24 px-6 bg-brandBlue text-white text-center border-t-4 border-brandGreen">
         <div class="max-w-4xl mx-auto relative z-10">
             <h2 class="font-heading text-brandGreenLight font-bold tracking-widest uppercase text-sm mb-2">Tu Cita a un clic</h2>
@@ -458,9 +728,25 @@
         </div>
     </section>
 
-    <footer class="py-12 px-6 text-center bg-white border-t border-gray-100">
-        <div class="font-heading font-extrabold text-xl tracking-wide text-brandBlue mb-4">ESTÉTICA<span class="text-brandGreen"> Y BIENESTAR</span></div>
-        <p class="text-gray-500 text-sm font-medium">&copy; 2026 Estética y Bienestar. Diseñado para la excelencia en Sogamoso.</p>
+    <footer class="py-12 px-6 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-center md:text-left">
+                <div class="font-heading font-extrabold text-xl tracking-wide text-brandBlue mb-1">ESTÉTICA<span class="text-brandGreen"> Y BIENESTAR</span></div>
+                <p class="text-gray-400 text-xs">Cra 9 # 16a-31, Sogamoso &middot; 313 485 6242</p>
+            </div>
+            <div class="flex gap-3">
+                <a href="https://www.instagram.com/estetica95015/" target="_blank" rel="noopener" aria-label="Instagram" class="w-10 h-10 rounded-full bg-gray-100 hover:bg-pink-500 flex items-center justify-center text-gray-500 hover:text-white transition-all duration-300">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61579538362445" target="_blank" rel="noopener" aria-label="Facebook" class="w-10 h-10 rounded-full bg-gray-100 hover:bg-[#1877F2] flex items-center justify-center text-gray-500 hover:text-white transition-all duration-300">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="https://wa.me/573134856242" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-10 h-10 rounded-full bg-gray-100 hover:bg-[#25D366] flex items-center justify-center text-gray-500 hover:text-white transition-all duration-300">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                </a>
+            </div>
+            <p class="text-gray-400 text-xs text-center md:text-right">&copy; 2026 Estética y Bienestar.<br>Sogamoso, Colombia.</p>
+        </div>
     </footer>
 
     <a href="https://wa.me/573134856242?text=Hola,%20vengo%20de%20la%20página%20web.%20Quiero%20más%20información%20sobre%20los%20servicios%20y%20agendar%20una%20cita." target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 bg-[#25D366] text-white p-4 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:scale-110 hover:bg-[#20bd5a] transition-all duration-300 z-50 flex items-center justify-center group">
@@ -550,7 +836,22 @@
             targetInfo.classList.remove('opacity-0', 'pointer-events-none');
         }
 
-        // --- 4. Lógica del Modal de Video (Reels) ---
+        // --- 4. Lógica del FAQ (Acordeón) ---
+    function toggleFaq(btn) {
+        const body = btn.nextElementSibling;
+        const arrow = btn.querySelector('.faq-arrow');
+        const isOpen = !body.classList.contains('hidden');
+        // Cerrar todos
+        document.querySelectorAll('.faq-body').forEach(b => b.classList.add('hidden'));
+        document.querySelectorAll('.faq-arrow').forEach(a => a.style.transform = '');
+        // Abrir el clickeado si estaba cerrado
+        if (!isOpen) {
+            body.classList.remove('hidden');
+            arrow.style.transform = 'rotate(180deg)';
+        }
+    }
+
+    // --- 5. Lógica del Modal de Video (Reels) ---
         function openVideoModal(src) {
             const modal = document.getElementById('videoModal');
             const video = document.getElementById('modalVideo');
