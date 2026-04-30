@@ -127,7 +127,12 @@
         }
     </style>
 </head>
-<body class="bg-white text-gray-600 antialiased selection:bg-brandBlue selection:text-white font-sans">
+<!-- Se quitó el fondo blanco del body para dejar ver la marca de agua -->
+<body class="text-gray-600 antialiased selection:bg-brandBlue selection:text-white font-sans relative">
+
+    <!-- FONDO BASE Y MARCA DE AGUA GLOBAL (NO BLOQUEA CLICS) -->
+    <div class="fixed inset-0 z-[-2] bg-white pointer-events-none"></div>
+    <div class="fixed inset-0 z-[-1] pointer-events-none opacity-[0.06] bg-[url('este.jpeg')] bg-cover bg-center bg-no-repeat"></div>
 
     <!-- BARRA DE URGENCIA -->
     <div id="anuncio-bar" class="bg-brandGreen text-white text-center py-2.5 px-4 text-sm font-semibold relative">
@@ -136,13 +141,14 @@
         <button onclick="document.getElementById('anuncio-bar').style.display='none'" class="absolute right-3 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-lg leading-none">×</button>
     </div>
 
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
+    <!-- Se cambió 'fixed' por 'sticky top-0' para resolver el salto/vacío -->
+    <nav class="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center min-h-[5.5rem] sm:min-h-[6.5rem]">
             <a href="#inicio" class="flex items-center gap-3 sm:gap-4 h-full hover:opacity-90 transition-opacity">
-                <!-- Se modificaron los tamaños h-16 y h-20 para que el logo salga grande -->
+                <!-- Logo -->
                 <img src="Logo.jpg" alt="Logo Estética y Bienestar" class="h-16 sm:h-20 w-auto object-contain blend-logo">
                 <div class="flex flex-col justify-center">
-                    <!-- Se aumentó el tamaño de las letras de texto -->
+                    <!-- Textos del Logo -->
                     <span class="font-heading font-extrabold text-sm sm:text-xl leading-none text-brandBlue tracking-wide">ESTÉTICA</span>
                     <span class="font-heading font-extrabold text-sm sm:text-xl leading-none text-brandGreen tracking-wide">Y BIENESTAR</span>
                 </div>
@@ -160,7 +166,8 @@
         </div>
     </nav>
 
-    <header id="inicio" class="relative flex flex-col items-center justify-center min-h-screen text-center px-6 pt-24 pb-12 overflow-hidden bg-lightBg">
+    <!-- Se redujo el 'pt-24' a 'pt-8' porque el nav ahora hace parte del flujo y ocupa su propio espacio -->
+    <header id="inicio" class="relative flex flex-col items-center justify-center min-h-screen text-center px-6 pt-8 pb-12 overflow-hidden bg-lightBg">
         <div class="absolute inset-0 z-0 opacity-10">
             <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop" alt="Fondo Bienestar" class="w-full h-full object-cover mix-blend-luminosity">
             <div class="absolute inset-0 bg-white/80"></div>
@@ -208,9 +215,10 @@
         </div>
     </header>
 
-    <main class="bg-white">
+    <!-- Se cambió a transparente para que el fondo/marca de agua se vea -->
+    <main class="bg-transparent relative">
         
-        <section id="tecnologia" class="py-20 px-6 max-w-7xl mx-auto">
+        <section id="tecnologia" class="py-20 px-6 max-w-7xl mx-auto relative z-10">
             <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
                 <div>
                     <h2 class="font-heading text-3xl md:text-4xl font-bold text-brandBlue pb-2">Instrumentos de Última Tecnología</h2>
@@ -350,7 +358,7 @@
 
             </div>
             
-            <div class="flex justify-center mt-4 md:hidden">
+            <div class="flex justify-center mt-4 md:hidden relative z-10">
                 <span class="text-xs text-brandGreen font-medium tracking-widest uppercase flex items-center gap-2">
                     <svg class="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     Desliza para ver más
@@ -358,7 +366,7 @@
             </div>
         </section>
 
-        <section id="servicios" class="py-20 px-6 max-w-7xl mx-auto bg-lightBg rounded-3xl border border-gray-100">
+        <section id="servicios" class="py-20 px-6 max-w-7xl mx-auto bg-lightBg rounded-3xl border border-gray-100 relative z-10">
             <div class="text-center mb-10">
                 <h2 class="font-heading text-3xl md:text-4xl font-bold text-brandBlue pb-4">Nuestros Tratamientos</h2>
                 <p class="text-gray-500">Selecciona una categoría para explorar nuestros servicios detallados.</p>
@@ -479,7 +487,7 @@
             </div>
         </section>
 
-        <section id="redes" class="py-20 px-6 max-w-7xl mx-auto">
+        <section id="redes" class="py-20 px-6 max-w-7xl mx-auto relative z-10">
             <div class="text-center mb-12">
                 <h2 class="font-heading text-3xl md:text-4xl font-bold text-brandBlue pb-4">Únete a nuestra comunidad</h2>
                 <p class="text-gray-500 mb-8 max-w-2xl mx-auto">Síguenos en nuestras redes oficiales para ver testimonios reales, tips de cuidado en casa y descubrir nuestras promociones exclusivas.</p>
@@ -524,7 +532,7 @@
             </div>
         </section>
 
-        <section id="contacto" class="py-20 px-6 max-w-7xl mx-auto border-t border-gray-100">
+        <section id="contacto" class="py-20 px-6 max-w-7xl mx-auto border-t border-gray-100 relative z-10">
             <div class="text-center mb-16">
                 <h2 class="font-heading text-3xl md:text-4xl font-bold text-brandBlue pb-4">Información de Contacto</h2>
                 <p class="text-gray-500">Comunícate directamente con nosotros o visítanos en nuestras instalaciones.</p>
@@ -558,7 +566,7 @@
     </main>
 
         <!-- ===== TESTIMONIOS ===== -->
-        <section id="testimonios" class="py-20 px-6 bg-lightBg">
+        <section id="testimonios" class="py-20 px-6 bg-lightBg relative z-10">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-12">
                     <span class="text-brandGreen font-bold tracking-widest uppercase text-xs">Lo que dicen nuestras clientas</span>
@@ -649,69 +657,69 @@
         </section>
 
         <!-- ===== PREGUNTAS FRECUENTES ===== -->
-        <section id="faq" class="py-20 px-6 max-w-4xl mx-auto">
+        <section id="faq" class="py-20 px-6 max-w-4xl mx-auto relative z-10">
             <div class="text-center mb-12">
                 <span class="text-brandGreen font-bold tracking-widest uppercase text-xs">FAQ</span>
                 <h2 class="font-heading text-3xl md:text-4xl font-bold text-brandBlue mt-2 pb-4">Preguntas frecuentes</h2>
             </div>
             <div class="space-y-3">
 
-                <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-brandBlue hover:bg-lightBg transition-colors">
+                <div class="border border-gray-200 rounded-2xl overflow-hidden bg-white/60 backdrop-blur-sm">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-brandBlue hover:bg-white/90 transition-colors">
                         ¿La valoración inicial realmente es gratis?
                         <svg class="faq-arrow w-5 h-5 text-brandGreen shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="faq-body hidden px-6 pb-5 text-sm text-gray-500 leading-relaxed">
+                    <div class="faq-body hidden px-6 pb-5 text-sm text-gray-500 leading-relaxed bg-white/90">
                         Sí, completamente gratis y sin compromiso. Analizamos tu piel con nuestro escáner facial inteligente, evaluamos tus objetivos y te diseñamos un plan personalizado. No hay presión para contratar nada ese día.
                     </div>
                 </div>
 
-                <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-brandBlue hover:bg-lightBg transition-colors">
+                <div class="border border-gray-200 rounded-2xl overflow-hidden bg-white/60 backdrop-blur-sm">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-brandBlue hover:bg-white/90 transition-colors">
                         ¿Cuántas sesiones necesito para ver resultados?
                         <svg class="faq-arrow w-5 h-5 text-brandGreen shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="faq-body hidden px-6 pb-5 text-sm text-gray-500 leading-relaxed">
+                    <div class="faq-body hidden px-6 pb-5 text-sm text-gray-500 leading-relaxed bg-white/90">
                         Depende del tratamiento. Con el Hydrafacial notarás resultados desde la primera sesión. Para depilación láser se recomiendan entre 6 y 8 sesiones para eliminación definitiva. En carboxiterapia los cambios son visibles a partir de la tercera sesión. En tu valoración te decimos exactamente qué esperar.
                     </div>
                 </div>
 
-                <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-brandBlue hover:bg-lightBg transition-colors">
+                <div class="border border-gray-200 rounded-2xl overflow-hidden bg-white/60 backdrop-blur-sm">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-brandBlue hover:bg-white/90 transition-colors">
                         ¿La depilación láser duele?
                         <svg class="faq-arrow w-5 h-5 text-brandGreen shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="faq-body hidden px-6 pb-5 text-sm text-gray-500 leading-relaxed">
+                    <div class="faq-body hidden px-6 pb-5 text-sm text-gray-500 leading-relaxed bg-white/90">
                         Nuestro láser de diodo incluye un sistema de enfriamiento integrado que hace el proceso indoloro. La mayoría de clientas lo describen como una leve sensación de calor, nada comparable al dolor de la cera o el hilo.
                     </div>
                 </div>
 
-                <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-brandBlue hover:bg-lightBg transition-colors">
+                <div class="border border-gray-200 rounded-2xl overflow-hidden bg-white/60 backdrop-blur-sm">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-brandBlue hover:bg-white/90 transition-colors">
                         ¿Atienden a hombres también?
                         <svg class="faq-arrow w-5 h-5 text-brandGreen shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="faq-body hidden px-6 pb-5 text-sm text-gray-500 leading-relaxed">
+                    <div class="faq-body hidden px-6 pb-5 text-sm text-gray-500 leading-relaxed bg-white/90">
                         Por supuesto. Atendemos a hombres especialmente en sueroterapia, masajes terapéuticos, depilación láser y tratamientos para manchas. El cuidado personal no tiene género.
                     </div>
                 </div>
 
-                <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-brandBlue hover:bg-lightBg transition-colors">
+                <div class="border border-gray-200 rounded-2xl overflow-hidden bg-white/60 backdrop-blur-sm">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-brandBlue hover:bg-white/90 transition-colors">
                         ¿Cómo puedo agendar mi cita?
                         <svg class="faq-arrow w-5 h-5 text-brandGreen shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="faq-body hidden px-6 pb-5 text-sm text-gray-500 leading-relaxed">
+                    <div class="faq-body hidden px-6 pb-5 text-sm text-gray-500 leading-relaxed bg-white/90">
                         Tienes tres formas: 1) Usa el formulario de reservas en esta misma página y escoge tu horario al instante. 2) Escríbenos por WhatsApp al +57 313 485 6242. 3) Llámanos directamente. El sistema opera 24/7 de forma automática.
                     </div>
                 </div>
 
-                <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-brandBlue hover:bg-lightBg transition-colors">
+                <div class="border border-gray-200 rounded-2xl overflow-hidden bg-white/60 backdrop-blur-sm">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-brandBlue hover:bg-white/90 transition-colors">
                         ¿Dónde están ubicados?
                         <svg class="faq-arrow w-5 h-5 text-brandGreen shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="faq-body hidden px-6 pb-5 text-sm text-gray-500 leading-relaxed">
+                    <div class="faq-body hidden px-6 pb-5 text-sm text-gray-500 leading-relaxed bg-white/90">
                         Estamos en la Cra 9 # 16a-31 en el centro de Sogamoso. Para la ubicación exacta y cómo llegar, escríbenos al WhatsApp y te enviamos el pin de Google Maps.
                     </div>
                 </div>
@@ -719,7 +727,7 @@
             </div>
         </section>
 
-    <section id="reservas" class="py-24 px-6 bg-brandBlue text-white text-center border-t-4 border-brandGreen">
+    <section id="reservas" class="py-24 px-6 bg-brandBlue text-white text-center border-t-4 border-brandGreen relative z-10">
         <div class="max-w-4xl mx-auto relative z-10">
             <h2 class="font-heading text-brandGreenLight font-bold tracking-widest uppercase text-sm mb-2">Tu Cita a un clic</h2>
             <h3 class="font-heading text-4xl md:text-5xl font-bold tracking-tight mb-6">Agenda tu Tratamiento</h3>
@@ -731,7 +739,8 @@
         </div>
     </section>
 
-    <footer class="py-12 px-6 bg-white border-t border-gray-100">
+    <!-- Se cambió a fondo transparente para dejar ver la marca de agua -->
+    <footer class="py-12 px-6 bg-transparent border-t border-gray-100 relative z-10">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="text-center md:text-left">
                 <div class="font-heading font-extrabold text-xl tracking-wide text-brandBlue mb-1">ESTÉTICA<span class="text-brandGreen"> Y BIENESTAR</span></div>
