@@ -513,21 +513,40 @@
             <div class="max-w-7xl mx-auto bg-brandBlue rounded-3xl overflow-hidden shadow-xl">
                 <div class="px-6 sm:px-10 lg:px-14 py-14">
 
-                    <div class="max-w-3xl">
-                        <span class="inline-flex items-center gap-2 bg-brandGreen text-white font-bold tracking-widest uppercase text-xs mb-5 px-4 py-2 rounded-full">
-                            Área médica
-                        </span>
-                        <h2 class="font-heading text-3xl md:text-5xl font-bold text-white leading-tight mb-5">
-                            Sueroterapia:<br class="hidden sm:block"> bienestar desde adentro
-                        </h2>
-                        <p class="text-blue-100 text-lg leading-relaxed mb-4">
-                            Vitaminas, minerales y antioxidantes aplicados por vía intravenosa, con
-                            <strong class="text-white">absorción directa</strong> a diferencia de las vitaminas en pastilla.
-                            Cada protocolo se define en una valoración médica previa, según lo que tu cuerpo realmente necesita.
-                        </p>
-                        <p class="text-blue-200 text-sm leading-relaxed mb-10">
-                            Procedimiento realizado y supervisado por personal médico, con insumos estériles de un solo uso.
-                        </p>
+                    <div class="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-14 mb-12">
+                        <div class="lg:w-[38%] shrink-0 order-first lg:order-last">
+                            <div class="relative max-w-[280px] mx-auto lg:max-w-none">
+                                <!-- La foto trae fondo blanco, no transparente: va sobre su propio
+                                     panel blanco para que el corte se vea intencional y no un
+                                     rectángulo pegado encima del azul. object-position sube el
+                                     encuadre porque la toma tiene mucho aire sobre la cabeza. -->
+                                <div class="rounded-3xl overflow-hidden bg-white shadow-2xl">
+                                    <img src="doctor.jpg" alt="Médico a cargo del área de sueroterapia"
+                                         loading="lazy" width="678" height="900"
+                                         class="w-full h-full object-cover object-[center_22%] aspect-[3/4]">
+                                </div>
+                                <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brandGreen text-white text-xs font-bold tracking-wide uppercase px-5 py-2 rounded-full shadow-lg whitespace-nowrap">
+                                    Dirección médica
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:w-[62%]">
+                            <span class="inline-flex items-center gap-2 bg-brandGreen text-white font-bold tracking-widest uppercase text-xs mb-5 px-4 py-2 rounded-full">
+                                Área médica
+                            </span>
+                            <h2 class="font-heading text-3xl md:text-5xl font-bold text-white leading-tight mb-5">
+                                Sueroterapia:<br class="hidden sm:block"> bienestar desde adentro
+                            </h2>
+                            <p class="text-blue-100 text-lg leading-relaxed mb-4">
+                                Vitaminas, minerales y antioxidantes aplicados por vía intravenosa, con
+                                <strong class="text-white">absorción directa</strong> a diferencia de las vitaminas en pastilla.
+                                Cada protocolo se define en una valoración médica previa, según lo que tu cuerpo realmente necesita.
+                            </p>
+                            <p class="text-blue-200 text-sm leading-relaxed">
+                                Procedimiento realizado y supervisado por personal médico, con insumos estériles de un solo uso.
+                            </p>
+                        </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
