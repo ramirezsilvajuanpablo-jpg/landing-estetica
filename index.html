@@ -517,14 +517,10 @@
                     <div class="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-14 mb-12">
                         <div class="lg:w-[38%] shrink-0 order-first lg:order-last">
                             <div class="relative max-w-[280px] mx-auto lg:max-w-none">
-                                <!-- La foto trae fondo blanco, no transparente: va sobre su propio
-                                     panel blanco para que el corte se vea intencional y no un
-                                     rectángulo pegado encima del azul. object-position sube el
-                                     encuadre porque la toma tiene mucho aire sobre la cabeza. -->
-                                <div class="rounded-3xl overflow-hidden bg-white shadow-2xl">
-                                    <img src="doctor.jpg" alt="Médico a cargo del área de sueroterapia"
-                                         loading="lazy" width="678" height="900"
-                                         class="w-full h-full object-cover object-[center_22%] aspect-[3/4]">
+                                <div class="rounded-3xl overflow-hidden shadow-2xl">
+                                    <img src="doctor-sueroterapia.jpg" alt="Médico a cargo del área de sueroterapia"
+                                         loading="lazy" width="900" height="1195"
+                                         class="block w-full aspect-[3/4] object-cover">
                                 </div>
                                 <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brandGreen text-white text-xs font-bold tracking-wide uppercase px-5 py-2 rounded-full shadow-lg whitespace-nowrap">
                                     Dirección médica
@@ -638,21 +634,10 @@
                         </div>
 
                         <div class="lg:w-[45%] w-full max-w-md mx-auto lg:max-w-none">
-                            <!-- items-start: sin esto las dos celdas se estiran a la misma altura y
-                                 bajo la foto corta queda una franja blanca. -->
-                            <div class="grid grid-cols-2 gap-3 sm:gap-4 items-start">
-                                <div class="rounded-2xl overflow-hidden shadow-lg">
-                                    <img src="doctor-tele-1.jpg" alt="Dr. Carlos Iván Ramírez D."
-                                         width="900" height="1195" loading="lazy"
-                                         class="block w-full aspect-[3/4] object-cover">
-                                </div>
-                                <!-- La segunda va corrida hacia abajo a propósito: las dos son verticales
-                                     y al ras se leen como un documento de identidad. -->
-                                <div class="rounded-2xl overflow-hidden shadow-lg mt-6 sm:mt-10">
-                                    <img src="doctor-tele-2.jpg" alt="Consulta de telemedicina por videollamada"
-                                         width="900" height="1195" loading="lazy"
-                                         class="block w-full aspect-[3/4] object-cover">
-                                </div>
+                            <div class="max-w-[300px] sm:max-w-[340px] mx-auto rounded-2xl overflow-hidden shadow-xl">
+                                <img src="doctor-telemedicina.jpg" alt="Dr. Carlos Iván Ramírez D. en consulta de telemedicina"
+                                     width="900" height="1195" loading="lazy"
+                                     class="block w-full aspect-[3/4] object-cover">
                             </div>
                             <p class="mt-4 text-center text-sm font-semibold text-brandBlue">
                                 Dr. Carlos Iván Ramírez D.
