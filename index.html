@@ -638,26 +638,26 @@
                         </div>
 
                         <div class="lg:w-[45%] w-full max-w-md mx-auto lg:max-w-none">
-                            <div class="grid grid-cols-3 grid-rows-2 gap-3 aspect-[3/2]">
-                                <!-- FOTO telemedicina-1.jpg — cuando llegue, reemplazar el contenido de este
-                                     bloque por <img src="telemedicina-1.jpg" class="w-full h-full object-cover" alt="…"> -->
-                                <div class="col-span-2 row-span-2 relative rounded-2xl overflow-hidden bg-gradient-to-br from-brandBlue/10 via-lightBg to-brandGreen/15 border border-gray-100 flex items-center justify-center">
-                                    <svg class="w-14 h-14 text-brandBlue/25" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/></svg>
-                                    <span class="absolute bottom-3 left-3 bg-white/95 text-brandBlue text-xs font-bold px-3 py-1.5 rounded-full shadow">
-                                        Dr. Carlos Iván Ramírez D.
-                                    </span>
+                            <!-- items-start: sin esto las dos celdas se estiran a la misma altura y
+                                 bajo la foto corta queda una franja blanca. -->
+                            <div class="grid grid-cols-2 gap-3 sm:gap-4 items-start">
+                                <div class="rounded-2xl overflow-hidden shadow-lg">
+                                    <img src="doctor-tele-1.jpg" alt="Dr. Carlos Iván Ramírez D."
+                                         width="900" height="1195" loading="lazy"
+                                         class="block w-full aspect-[3/4] object-cover">
                                 </div>
-                                <!-- FOTO telemedicina-2.jpg — cuando llegue, reemplazar el contenido de este
-                                     bloque por <img src="telemedicina-2.jpg" class="w-full h-full object-cover" alt="…"> -->
-                                <div class=" relative rounded-2xl overflow-hidden bg-gradient-to-br from-brandBlue/10 via-lightBg to-brandGreen/15 border border-gray-100 flex items-center justify-center">
-                                    <svg class="w-8 h-8 text-brandBlue/25" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/></svg>
-                                </div>
-                                <!-- FOTO telemedicina-3.jpg — cuando llegue, reemplazar el contenido de este
-                                     bloque por <img src="telemedicina-3.jpg" class="w-full h-full object-cover" alt="…"> -->
-                                <div class=" relative rounded-2xl overflow-hidden bg-gradient-to-br from-brandBlue/10 via-lightBg to-brandGreen/15 border border-gray-100 flex items-center justify-center">
-                                    <svg class="w-8 h-8 text-brandBlue/25" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/></svg>
+                                <!-- La segunda va corrida hacia abajo a propósito: las dos son verticales
+                                     y al ras se leen como un documento de identidad. -->
+                                <div class="rounded-2xl overflow-hidden shadow-lg mt-6 sm:mt-10">
+                                    <img src="doctor-tele-2.jpg" alt="Consulta de telemedicina por videollamada"
+                                         width="900" height="1195" loading="lazy"
+                                         class="block w-full aspect-[3/4] object-cover">
                                 </div>
                             </div>
+                            <p class="mt-4 text-center text-sm font-semibold text-brandBlue">
+                                Dr. Carlos Iván Ramírez D.
+                                <span class="block text-xs font-normal text-gray-500 mt-0.5">R&amp;R Centro de Medicina y Optometría</span>
+                            </p>
                         </div>
                     </div>
 
