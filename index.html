@@ -98,27 +98,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Montserrat', 'sans-serif'],
-                    },
-                    colors: {
-                        brandBlue: '#1A4A76',
-                        brandBlueLight: '#2C6496',
-                        brandGreen: '#3A7843',
-                        brandGreenLight: '#4A9455',
-                        darkText: '#1F2937',       
-                        lightBg: '#F8FAFC',
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- El CSS va compilado. Antes venía el CDN de Tailwind, que le hace
+         generar los estilos al navegador de CADA visitante: eso retrasa el
+         primer pintado y hace que la página aparezca un instante sin formato.
+         Para regenerarlo después de tocar clases: npm run css -->
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="favicon-32.png" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <style>
         .text-gradient {
             background: linear-gradient(to right, #1A4A76, #3A7843);
@@ -254,7 +241,7 @@
             <div id="techCarousel" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-6">
                 
                 <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-1')">
-                    <img loading="lazy" src="escaner.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Escáner'" class="w-full h-full object-contain p-4 blend-logo">
+                    <img alt="Escáner en Estética y Bienestar" loading="lazy" src="escaner.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Escáner'" class="w-full h-full object-contain p-4 blend-logo">
                     <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
                     <div id="info-1" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
                         <h4 class="text-white font-heading font-bold text-2xl mb-3">Analizador Facial Inteligente</h4>
@@ -264,7 +251,7 @@
                 </div>
 
                 <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-2')">
-                    <img loading="lazy" src="hidrafacial.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Hydrafacial'" class="w-full h-full object-contain p-4 blend-logo">
+                    <img alt="Hydrafacial en Estética y Bienestar" loading="lazy" src="hidrafacial.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Hydrafacial'" class="w-full h-full object-contain p-4 blend-logo">
                     <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
                     <div id="info-2" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
                         <h4 class="text-white font-heading font-bold text-2xl mb-3">H2O2 Small Bubble (Hydrafacial)</h4>
@@ -274,7 +261,7 @@
                 </div>
 
                 <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-3')">
-                    <img loading="lazy" src="slimtech.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Slimtech'" class="w-full h-full object-contain p-4 blend-logo">
+                    <img alt="Slimtech en Estética y Bienestar" loading="lazy" src="slimtech.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Slimtech'" class="w-full h-full object-contain p-4 blend-logo">
                     <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
                     <div id="info-3" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
                         <h4 class="text-white font-heading font-bold text-2xl mb-3">Plataforma Slimtech Pro</h4>
@@ -284,7 +271,7 @@
                 </div>
 
                 <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-4')">
-                    <img loading="lazy" src="carboxi.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Carboxiterapia'" class="w-full h-full object-contain p-4 blend-logo">
+                    <img alt="Carboxiterapia en Estética y Bienestar" loading="lazy" src="carboxi.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Carboxiterapia'" class="w-full h-full object-contain p-4 blend-logo">
                     <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
                     <div id="info-4" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
                         <h4 class="text-white font-heading font-bold text-2xl mb-3">CarboCell (Carboxiterapia)</h4>
@@ -294,7 +281,7 @@
                 </div>
 
                 <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-5')">
-                    <img loading="lazy" src="laser.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Laser'" class="w-full h-full object-contain p-4 blend-logo">
+                    <img alt="Laser en Estética y Bienestar" loading="lazy" src="laser.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Laser'" class="w-full h-full object-contain p-4 blend-logo">
                     <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
                     <div id="info-5" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
                         <h4 class="text-white font-heading font-bold text-2xl mb-3">Láser de Diodo Q&R</h4>
@@ -304,7 +291,7 @@
                 </div>
 
                 <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-6')">
-                    <img loading="lazy" src="alta-frecuencia.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Alta+Frecuencia'" class="w-full h-full object-contain p-4 blend-logo">
+                    <img alt="Alta Frecuencia en Estética y Bienestar" loading="lazy" src="alta-frecuencia.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Alta+Frecuencia'" class="w-full h-full object-contain p-4 blend-logo">
                     <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
                     <div id="info-6" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
                         <h4 class="text-white font-heading font-bold text-2xl mb-3">Alta Frecuencia</h4>
@@ -314,7 +301,7 @@
                 </div>
 
                 <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-7')">
-                    <img loading="lazy" src="microdermoabrasion.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Microdermoabrasion'" class="w-full h-full object-contain p-4 blend-logo">
+                    <img alt="Microdermoabrasion en Estética y Bienestar" loading="lazy" src="microdermoabrasion.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Microdermoabrasion'" class="w-full h-full object-contain p-4 blend-logo">
                     <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
                     <div id="info-7" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
                         <h4 class="text-white font-heading font-bold text-2xl mb-3">Punta de Diamante</h4>
@@ -324,7 +311,7 @@
                 </div>
 
                 <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-8')">
-                    <img loading="lazy" src="mascarillas.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Jelly+Masks'" class="w-full h-full object-contain p-4 blend-logo">
+                    <img alt="Jelly Masks en Estética y Bienestar" loading="lazy" src="mascarillas.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Jelly+Masks'" class="w-full h-full object-contain p-4 blend-logo">
                     <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
                     <div id="info-8" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
                         <h4 class="text-white font-heading font-bold text-2xl mb-3">Jelly Masks Premium</h4>
@@ -334,7 +321,7 @@
                 </div>
 
                 <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-9')">
-                    <img loading="lazy" src="vaporizador.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Vaporizador'" class="w-full h-full object-contain p-4 blend-logo">
+                    <img alt="Vaporizador en Estética y Bienestar" loading="lazy" src="vaporizador.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Vaporizador'" class="w-full h-full object-contain p-4 blend-logo">
                     <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
                     <div id="info-9" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
                         <h4 class="text-white font-heading font-bold text-2xl mb-3">Vaporizador de Ozono</h4>
@@ -344,7 +331,7 @@
                 </div>
 
                 <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-10')">
-                    <img loading="lazy" src="maderoterapia.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Maderoterapia'" class="w-full h-full object-contain p-4 blend-logo">
+                    <img alt="Maderoterapia en Estética y Bienestar" loading="lazy" src="maderoterapia.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=Maderoterapia'" class="w-full h-full object-contain p-4 blend-logo">
                     <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
                     <div id="info-10" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
                         <h4 class="text-white font-heading font-bold text-2xl mb-3">Set de Maderoterapia</h4>
@@ -354,7 +341,7 @@
                 </div>
 
                 <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-11')">
-                    <img loading="lazy" src="led-azul.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=LED+Azul'" class="w-full h-full object-contain p-4 blend-logo">
+                    <img alt="LED Azul en Estética y Bienestar" loading="lazy" src="led-azul.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=LED+Azul'" class="w-full h-full object-contain p-4 blend-logo">
                     <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
                     <div id="info-11" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
                         <h4 class="text-white font-heading font-bold text-2xl mb-3">Terapia de Luz LED Azul</h4>
@@ -364,7 +351,7 @@
                 </div>
 
                 <div class="snap-center shrink-0 w-[85vw] md:w-[350px] h-[400px] rounded-3xl overflow-hidden shadow-md relative group cursor-pointer border border-gray-100 bg-white" onclick="toggleTechInfo('info-12')">
-                    <img loading="lazy" src="led-roja.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=LED+Roja'" class="w-full h-full object-contain p-4 blend-logo">
+                    <img alt="LED Roja en Estética y Bienestar" loading="lazy" src="led-roja.jpg" onerror="this.src='https://placehold.co/400x500/f8fafc/1a4a76?text=LED+Roja'" class="w-full h-full object-contain p-4 blend-logo">
                     <div class="absolute bottom-4 right-4 bg-brandBlue text-white p-2 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
                     <div id="info-12" class="tech-info absolute inset-0 bg-brandBlue/95 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center opacity-0 transition-opacity duration-300 pointer-events-none">
                         <h4 class="text-white font-heading font-bold text-2xl mb-3">Terapia de Luz LED Roja</h4>

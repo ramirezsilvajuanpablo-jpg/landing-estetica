@@ -1,0 +1,7 @@
+{
+  "name": "landing-estetica",
+  "private": true,
+  "scripts": {
+    "css": "npx -y tailwindcss@3 -c tailwind.config.cjs -i entrada.css -o estilos.css --minify"
+  }
+}
