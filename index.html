@@ -121,6 +121,14 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        @keyframes flotar {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-flotar { animation: flotar 4s ease-in-out infinite; }
+        @media (prefers-reduced-motion: reduce) {
+            .animate-flotar { animation: none; }
+        }
         .blend-logo {
             mix-blend-mode: multiply;
             filter: contrast(1.2) brightness(1.05);
@@ -152,7 +160,7 @@
                     <span class="font-heading font-extrabold text-sm sm:text-xl leading-none text-brandGreen tracking-wide">Y BIENESTAR</span>
                 </div>
             </a>
-            <div class="hidden md:flex space-x-6 text-sm font-semibold">
+            <div class="hidden xl:flex space-x-6 text-sm font-semibold">
                 <a href="#tecnologia" class="text-brandBlue hover:text-brandGreen transition-colors">Tecnología</a>
                 <a href="#servicios" class="text-brandBlue hover:text-brandGreen transition-colors">Tratamientos</a>
                 <a href="#sueroterapia-med" class="text-brandBlue hover:text-brandGreen transition-colors">Sueroterapia</a>
@@ -172,34 +180,39 @@
         </div>
     </nav>
 
-    <header id="inicio" class="relative flex flex-col items-center justify-center min-h-screen text-center px-6 pt-8 pb-12 overflow-hidden bg-lightBg">
+    <header id="inicio" class="relative overflow-hidden bg-lightBg px-6">
         <div class="absolute inset-0 z-0 opacity-10">
             <img src="este.jpeg" alt="Instalaciones de Estética y Bienestar" class="w-full h-full object-cover mix-blend-luminosity">
             <div class="absolute inset-0 bg-white/80"></div>
         </div>
-        
-        <div class="z-10 max-w-4xl mt-10 relative">
+
+        <!-- Portada en dos columnas: el texto manda y Luisa acompaña. En celular
+             va primero el texto con sus botones, para que «Agenda tu valoración»
+             se vea sin tener que bajar; ella viene después, apoyada en el borde
+             inferior de la sección. -->
+        <div class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-[1.15fr_0.85fr] items-center gap-4 lg:gap-6 lg:min-h-[calc(100vh-8rem)]">
+            <div class="text-center lg:text-left pt-14 lg:pt-8 lg:pb-12">
             <span class="inline-flex items-center gap-2 bg-brandGreen/10 text-brandGreen font-bold tracking-widest uppercase text-xs mb-5 px-4 py-2 rounded-full border border-brandGreen/20">
                 ⭐ Más de 500 clientas satisfechas en Sogamoso
             </span>
-            <h1 class="font-heading text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-brandBlue leading-tight">
-                La piel que siempre <br><span class="text-gradient">quisiste, aquí.</span>
-            </h1>
-            <p class="text-lg md:text-xl text-gray-500 mb-10 font-medium max-w-2xl mx-auto leading-relaxed">
+                <h1 class="font-heading text-5xl md:text-6xl lg:text-[3.5rem] xl:text-[4rem] font-extrabold tracking-tight mb-6 text-brandBlue leading-tight">
+                    La piel que siempre <br><span class="text-gradient">quisiste, aquí.</span>
+                </h1>
+            <p class="text-lg md:text-xl text-gray-500 mb-10 font-medium max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                 En Sogamoso, somos expertos en recuperación, bienestar y estética con <strong class="text-brandBlue">11 tecnologías de última generación</strong>. Tratamientos personalizados para que te sientas y te veas increíble.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#reservas" class="inline-block bg-brandGreen text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-brandGreenLight transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+            <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                <a href="#reservas" class="inline-block whitespace-nowrap bg-brandGreen text-white px-10 lg:px-8 py-4 rounded-full font-bold text-lg lg:text-base hover:bg-brandGreenLight transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                     Agenda tu Valoración Gratis
                 </a>
-                <a href="https://wa.me/573134856242?text=Hola,%20vi%20su%20página%20web%20y%20quiero%20información%20sobre%20los%20tratamientos." target="_blank" rel="noopener" onclick="eybLead('whatsapp_hero')" class="inline-flex items-center justify-center gap-2 bg-white border-2 border-[#25D366] text-[#25D366] px-10 py-4 rounded-full font-bold text-lg hover:bg-[#25D366] hover:text-white transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-1">
+                <a href="https://wa.me/573134856242?text=Hola,%20vi%20su%20página%20web%20y%20quiero%20información%20sobre%20los%20tratamientos." target="_blank" rel="noopener" onclick="eybLead('whatsapp_hero')" class="inline-flex items-center justify-center gap-2 whitespace-nowrap bg-white border-2 border-[#25D366] text-[#25D366] px-10 lg:px-8 py-4 rounded-full font-bold text-lg lg:text-base hover:bg-[#25D366] hover:text-white transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-1">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
                     Consultar por WhatsApp
                 </a>
             </div>
 
             <!-- Stats row -->
-            <div class="flex flex-wrap justify-center gap-8 mt-14 pt-10 border-t border-gray-200/60">
+            <div class="grid grid-cols-2 gap-y-6 sm:flex sm:flex-wrap justify-center lg:justify-start sm:gap-8 mt-10 pt-8 border-t border-gray-200/60">
                 <div class="text-center">
                     <div class="font-heading text-3xl font-black text-brandBlue">11</div>
                     <div class="text-xs text-gray-400 font-medium mt-1">Tecnologías<br>de punta</div>
@@ -216,6 +229,37 @@
                     <div class="font-heading text-3xl font-black text-brandBlue">$0</div>
                     <div class="text-xs text-gray-400 font-medium mt-1">Primera<br>valoración</div>
                 </div>
+            </div>
+            </div>
+
+            <div class="relative self-end flex justify-center lg:justify-end pt-6 lg:pt-0">
+                <!-- Círculo de la marca detrás: sin él, la figura recortada queda
+                     flotando en el vacío y se ve pegada encima de la página. -->
+                <div aria-hidden="true"
+                     class="absolute bottom-0 left-1/2 lg:left-auto lg:right-[4%] -translate-x-1/2 lg:translate-x-0 w-[86%] max-w-[500px] aspect-square rounded-full bg-gradient-to-br from-brandBlue/20 via-white to-brandGreen/30"></div>
+                <div aria-hidden="true"
+                     class="absolute bottom-[8%] left-1/2 lg:left-auto lg:right-[1%] -translate-x-1/2 lg:translate-x-0 w-[96%] max-w-[560px] aspect-square rounded-full border-2 border-dashed border-brandGreen/20"></div>
+
+                <picture class="relative">
+                    <source type="image/webp" srcset="luisa-460.webp 460w, luisa.webp 726w"
+                            sizes="(min-width: 1024px) 460px, 70vw">
+                    <img src="luisa.png" alt="Especialista de Estética y Bienestar saludando"
+                         width="726" height="1317" fetchpriority="high" decoding="async"
+                         class="relative block w-auto h-[430px] sm:h-[520px] lg:h-[min(620px,76vh)] xl:h-[min(700px,80vh)] max-w-none drop-shadow-2xl">
+                </picture>
+
+                <!-- Sello flotante: la misma oferta de la barra de arriba, puesta
+                     donde la mirada ya está. -->
+                <a href="#reservas"
+                   class="absolute top-[22%] left-0 sm:left-[8%] lg:left-[4%] bg-white/95 backdrop-blur rounded-2xl shadow-xl border border-gray-100 pl-3 pr-5 py-3 hidden sm:flex items-center gap-3 animate-flotar hover:shadow-2xl transition-shadow">
+                    <span class="w-11 h-11 rounded-full bg-gradient-to-br from-brandGreen to-brandGreenLight flex items-center justify-center shadow-md">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>
+                    </span>
+                    <span class="leading-tight text-left">
+                        <span class="block font-heading font-extrabold text-brandBlue text-sm">Primera valoración</span>
+                        <span class="block font-bold text-brandGreen text-xs uppercase tracking-widest">Gratis</span>
+                    </span>
+                </a>
             </div>
         </div>
     </header>
